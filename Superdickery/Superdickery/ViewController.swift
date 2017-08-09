@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
-
+    
+    let session = URLSession.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        fetchPage()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func fetchPage() {
+        let baseURL = URL(string: "http://www.superdickery.com/random")!
+        let downloadTask = session.downloadTask(with: baseURL, completionHandler: { (location, response, error) -> Void in
+            if error == nil {
+                let data = NSData(contentsOf: location!)
+                let tempData = String(data: data! as Data, encoding: .utf8)
+                print(tempData ?? String(describing: error))
+            }
+        })
+        downloadTask.resume()
     }
-
-
+    
 }
 

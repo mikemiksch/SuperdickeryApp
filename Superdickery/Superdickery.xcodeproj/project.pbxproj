@@ -35,6 +35,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		837A7FC21F3BA2A500907ADD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		837A7FC31F3BA2AF00907ADD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				838C8A311F3A59DF0097FCF4 /* Main.storyboard */,
+				838C8A361F3A59DF0097FCF4 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		837A7FC41F3BA2BF00907ADD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				838C8A2F1F3A59DF0097FCF4 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		837A7FC51F3BA2CB00907ADD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				838C8A391F3A59DF0097FCF4 /* Info.plist */,
+				838C8A341F3A59DF0097FCF4 /* Assets.xcassets */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		838C8A211F3A59DF0097FCF4 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +88,10 @@
 		838C8A2C1F3A59DF0097FCF4 /* Superdickery */ = {
 			isa = PBXGroup;
 			children = (
-				838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */,
-				838C8A2F1F3A59DF0097FCF4 /* ViewController.swift */,
-				838C8A311F3A59DF0097FCF4 /* Main.storyboard */,
-				838C8A341F3A59DF0097FCF4 /* Assets.xcassets */,
-				838C8A361F3A59DF0097FCF4 /* LaunchScreen.storyboard */,
-				838C8A391F3A59DF0097FCF4 /* Info.plist */,
+				837A7FC21F3BA2A500907ADD /* Model */,
+				837A7FC31F3BA2AF00907ADD /* View */,
+				837A7FC41F3BA2BF00907ADD /* Controller */,
+				837A7FC51F3BA2CB00907ADD /* Support */,
 			);
 			path = Superdickery;
 			sourceTree = "<group>";
@@ -304,6 +336,7 @@
 				838C8A3E1F3A59DF0097FCF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
