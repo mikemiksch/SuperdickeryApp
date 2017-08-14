@@ -10,26 +10,41 @@ import UIKit
 import Social
 import SwiftSoup
 
+
 class ViewController: UIViewController {
-    
-    let session = URLSession.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPage()
+        parseHTML(html: fetchPage())
     }
     
-    func fetchPage() {
-        let baseURL = URL(string: "http://www.superdickery.com/random")!
-        let downloadTask = session.downloadTask(with: baseURL, completionHandler: { (location, response, error) -> Void in
-            if error == nil {
-                let data = NSData(contentsOf: location!)
-                let tempData = String(data: data! as Data, encoding: .utf8)
-                print(tempData ?? String(describing: error))
-            }
-        })
-        downloadTask.resume()
+    func fetchPage() -> String {
+        let baseURL = URL(string: "http://www.superdickery.com/stupid-sexy-wade/")!
+        let data = NSData(contentsOf: baseURL)
+        let html = String(data: data! as Data, encoding: .utf8)!
+        return html
+    }
+    
+    func parseHTML(html: String) {
+        let html = html
+        let doc : Document = try! SwiftSoup.parse(html)
+        let title = try! doc.select("h1").text()
+        let images = try! doc.select(".aligncenter").array()
+        let text = try! doc.select(".no-bottom").select("p").text().lines
+        print(title)
+//        for each in images {
+//            let src = try! each.attr("src")
+//            print(src)
+//        }
+        print(text)
     }
     
 }
 
+extension String {
+    var lines: [String] {
+        var result = [String]()
+        enumerateLines { line, _ in result.append(line) }
+        return result
+    }
+}
