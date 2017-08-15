@@ -14,15 +14,14 @@ import SwiftSoup
 class ContentViewController: UIViewController {
     
     var titleText = String()
-    var imageSRC = [String]()
+    var imageElements = [Element]()
     var textContent = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         parseHTML(html: fetchPage())
-        print(titleText)
-        print(imageSRC)
-        print(textContent)
+        renderImages()
+        print(imageElements)
     }
     
     func fetchPage() -> String {
@@ -39,8 +38,7 @@ class ContentViewController: UIViewController {
         let images = try! doc.select(".aligncenter").array()
         let pTags = try! doc.select(".no-bottom").select("p").array()
         for each in images {
-            let src = try! each.attr("src")
-            imageSRC.append(src)
+            imageElements.append(each)
         }
 
         for each in pTags {
@@ -51,4 +49,30 @@ class ContentViewController: UIViewController {
         }
     }
     
+    func renderImages() {
+        for each in imageElements {
+            let src = try! each.attr("src")
+            let url = URL(string: src)!
+            print(src)
+            print(url)
+            let data = try! Data(contentsOf: url)
+            let image = UIImage(data: data)
+            let imageView = UIImageView(image: image)
+            self.view.addSubview(imageView)
+            imageView.center
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            imageView.bounds.size.width = imageView.superview!.bounds.size.width * 0.9
+            
+//            let widthRatio = imageView.bounds.size.width / imageView.image!.size.width
+//            let heightRatio = imageView.bounds.size.height / imageView.image!.size.height
+//            let imageScale = min(widthRatio, heightRatio)
+//            imageView.bounds.size.width = imageView.superview.bounds.size.width * imageScale
+//            imageView.bounds.size.width = imageView.image!.size.height * imageScale
+            
+//            let screenSize = UIScreen.main.bounds
+//            let imageSize = CGSize(width: screenSize.width * 0.9, height: CGFloat(imgHeight! * imgRatio))
+//            imageView.frame = CGRect(dictionaryRepresentation: imageSize as! CFDictionary)!
+        }
+    }
+
 }
