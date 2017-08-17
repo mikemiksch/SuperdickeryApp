@@ -13,6 +13,8 @@ import SwiftSoup
 
 class ContentViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var titleText = String()
     var imageElements = [Element]()
     var textContent = [String]()
@@ -20,12 +22,13 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parseHTML(html: fetchPage())
+        titleLabel.text = titleText
         renderImages()
-        print(imageElements)
+        
     }
     
     func fetchPage() -> String {
-        let baseURL = URL(string: "http://www.superdickery.com/stupid-sexy-wade/")!
+        let baseURL = URL(string: "http://www.superdickery.com/random/")!
         let data = NSData(contentsOf: baseURL)
         let html = String(data: data! as Data, encoding: .utf8)!
         return html
@@ -51,27 +54,23 @@ class ContentViewController: UIViewController {
     
     func renderImages() {
         for each in imageElements {
+            let width = Double(self.view.bounds.size.width * 0.9)
+            let height = try! Double(each.attr("height"))!
+//            let imageRatio = height/width
             let src = try! each.attr("src")
-            let url = URL(string: src)!
-            print(src)
-            print(url)
-            let data = try! Data(contentsOf: url)
-            let image = UIImage(data: data)
-            let imageView = UIImageView(image: image)
-            self.view.addSubview(imageView)
-            imageView.center
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
-            imageView.bounds.size.width = imageView.superview!.bounds.size.width * 0.9
-            
-//            let widthRatio = imageView.bounds.size.width / imageView.image!.size.width
-//            let heightRatio = imageView.bounds.size.height / imageView.image!.size.height
-//            let imageScale = min(widthRatio, heightRatio)
-//            imageView.bounds.size.width = imageView.superview.bounds.size.width * imageScale
-//            imageView.bounds.size.width = imageView.image!.size.height * imageScale
-            
-//            let screenSize = UIScreen.main.bounds
-//            let imageSize = CGSize(width: screenSize.width * 0.9, height: CGFloat(imgHeight! * imgRatio))
-//            imageView.frame = CGRect(dictionaryRepresentation: imageSize as! CFDictionary)!
+            let url = URL(string:src)!
+            DispatchQueue.global(qos: .userInitiated).async {
+                let imageData = NSData(contentsOf: url)!
+                let imageView = UIImageView(frame: CGRect(x: 0, y:0, width: width, height:height))
+                imageView.center = self.view.center
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData as Data)
+                    imageView.image = image
+                    imageView.contentMode = UIViewContentMode.scaleAspectFit
+                    self.view.addSubview(imageView)
+                }
+            }
         }
     }
 
