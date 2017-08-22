@@ -30,10 +30,7 @@ class ContentViewController: UIViewController {
         scrollView.backgroundColor = UIColor.white
         scrollView.contentSize.width = self.view.bounds.width
         scrollView.contentSize.height = 1000
-        generateImageViews() { result in
-            setImageViewConstraints()
-        }
-//        setImageViewConstraints()
+        renderImages()
         
     }
     
@@ -46,6 +43,7 @@ class ContentViewController: UIViewController {
     
     func parseHTML(html: String) {
         let html = html
+        print(html)
         let doc : Document = try! SwiftSoup.parse(html)
         titleText = try! doc.select("h1").text()
         let images = try! doc.select(".aligncenter").array()
@@ -62,37 +60,34 @@ class ContentViewController: UIViewController {
         }
     }
     
-    func generateImageViews(completion: () -> Void ) {
+    func renderImages() {
+        let group = DispatchGroup()
+        group.enter()
         for each in imageElements {
             let width = Double(self.view.bounds.size.width * 0.9)
             let height = try! Double(each.attr("height"))!
             let src = try! each.attr("src")
             let url = URL(string:src)!
-            DispatchQueue.global(qos: .userInitiated).async {
-                let imageData = NSData(contentsOf: url)!
-                let imageView = UIImageView(frame: CGRect(x: 0, y:0, width: width, height:height))
-                imageView.center = self.view.center
-                DispatchQueue.main.async {
-                    let image = UIImage(data: imageData as Data)
-                    imageView.image = image
-                    imageView.contentMode = UIViewContentMode.scaleAspectFit
-                    self.imageViews.append(imageView)
-                    print("here are image views when it should be appended: \(self.imageViews)")
-//                    self.view.addSubview(imageView)
-                }
-            }
+            let imageData = NSData(contentsOf: url)!
+            let imageView = UIImageView(frame: CGRect(x: 0, y:0, width: width, height:height))
+            imageView.center = self.view.center
+            let image = UIImage(data: imageData as Data)
+            imageView.image = image
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            self.imageViews.append(imageView)
+        }
+        group.leave()
+        group.notify(queue: DispatchQueue.main) {
+            self.setImageViewConstraints()
         }
 
     }
 
-    func setImageViewConstraints () {
-        print("Here are image views when ImageView Constraints is called \(self.imageViews)")
+    func setImageViewConstraints() {
         if !self.imageViews.isEmpty {
-            print("Hi there!")
             scrollView.addSubview(imageViews[0])
             let topConstraint = NSLayoutConstraint(item: imageViews[0], attribute: .top, relatedBy: .equal, toItem: self.titleLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
             scrollView.addConstraint(topConstraint)
         }
     }
 }
-    
