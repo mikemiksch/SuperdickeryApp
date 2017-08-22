@@ -35,7 +35,7 @@ class ContentViewController: UIViewController {
     }
     
     func fetchPage() -> String {
-        let baseURL = URL(string: "http://www.superdickery.com/random/")!
+        let baseURL = URL(string: "http://www.superdickery.com/stupid-sexy-wade/")!
         let data = NSData(contentsOf: baseURL)
         let html = String(data: data! as Data, encoding: .utf8)!
         return html
@@ -43,7 +43,6 @@ class ContentViewController: UIViewController {
     
     func parseHTML(html: String) {
         let html = html
-        print(html)
         let doc : Document = try! SwiftSoup.parse(html)
         titleText = try! doc.select("h1").text()
         let images = try! doc.select(".aligncenter").array()
@@ -70,11 +69,12 @@ class ContentViewController: UIViewController {
             let url = URL(string:src)!
             let imageData = NSData(contentsOf: url)!
             let imageView = UIImageView(frame: CGRect(x: 0, y:0, width: width, height:height))
-            imageView.center = self.view.center
+//            imageView.center = self.view.center
             let image = UIImage(data: imageData as Data)
             imageView.image = image
             imageView.contentMode = UIViewContentMode.scaleAspectFit
             self.imageViews.append(imageView)
+            
         }
         group.leave()
         group.notify(queue: DispatchQueue.main) {
@@ -85,9 +85,23 @@ class ContentViewController: UIViewController {
 
     func setImageViewConstraints() {
         if !self.imageViews.isEmpty {
-            scrollView.addSubview(imageViews[0])
-            let topConstraint = NSLayoutConstraint(item: imageViews[0], attribute: .top, relatedBy: .equal, toItem: self.titleLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
-            scrollView.addConstraint(topConstraint)
+            var previous = UIImageView()
+            for each in imageViews {
+                scrollView.addSubview(each)
+//                each.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+//                let centerX = NSLayoutConstraint(item: each, attribute: .centerX, relatedBy: .equal, toItem: scrollView, attribute: .centerX, multiplier: 1, constant: 1)
+//                if each === imageViews.first {
+//                    let topConstraint = NSLayoutConstraint(item: each, attribute: .top, relatedBy: .equal, toItem: self.titleLabel, attribute: .bottom, multiplier: 1.0, constant: 8.0)
+//                    scrollView.addConstraint(topConstraint)
+//                    previous = each
+//                    
+//                } else {
+//                    let topConstraint = NSLayoutConstraint(item: each, attribute: .top, relatedBy: .equal, toItem: previous, attribute: .bottom, multiplier: 1.0, constant: 8.0)
+//                    scrollView.addConstraint(topConstraint)
+//                    scrollView.addConstraint(centerX)
+//                    previous = each
+//                }
+            }
         }
     }
 }
