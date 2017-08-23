@@ -11,12 +11,13 @@ import SwiftSoup
 
 class HTMLParser {
     static let shared = HTMLParser()
+    
     var title = String()
     var imageElements = [Element]()
     var labelTexts = [String]()
     
     func fetchPage() -> String {
-        let baseURL = URL(string: "http://www.superdickery.com/random")!
+        let baseURL = URL(string: "http://www.superdickery.com/stupid-sexy-wade/")!
         let data = NSData(contentsOf: baseURL)
         let html = String(data: data! as Data, encoding: .utf8)!
         return html

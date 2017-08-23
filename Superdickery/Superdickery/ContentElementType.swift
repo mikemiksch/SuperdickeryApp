@@ -11,7 +11,7 @@ import Foundation
 enum ContentElementType {
     case title
     case image
-    case video
+//    case video
     case text
 }
 

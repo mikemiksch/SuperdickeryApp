@@ -14,9 +14,12 @@ class ContentImageElement : ContentElement {
         return .image
     }
     
-    var element: Element
+    var image: UIImage
     
     init(element: Element) {
-        self.element = element
+        let src = try! element.attr("src")
+        let url = URL(string: src)!
+        let imageData = NSData(contentsOf: url)!
+        image = UIImage(data: imageData as Data)!
     }
 }
