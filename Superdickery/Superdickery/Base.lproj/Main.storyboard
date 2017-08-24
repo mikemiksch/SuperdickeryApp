@@ -6,62 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Thames-Serial-Heavy-Regular.ttf">
-            <string>Thames-Serial-Heavy-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Content View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ContentViewController" customModule="Superdickery" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-Yt-O06">
-                                <rect key="frame" x="0.0" y="28" width="375" height="605"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fNt-Pd-J1h">
-                                        <rect key="frame" x="19" y="8" width="337.5" height="42"/>
-                                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="top" secondItem="GGA-Yt-O06" secondAttribute="top" constant="8" id="MWk-Sl-H6V"/>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="centerX" secondItem="GGA-Yt-O06" secondAttribute="centerX" id="cH4-Ca-CGn"/>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="width" secondItem="GGA-Yt-O06" secondAttribute="width" multiplier="0.9" id="rwh-CY-rfQ"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="GGA-Yt-O06" secondAttribute="trailing" id="3BI-5J-b4I"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GGA-Yt-O06" secondAttribute="bottom" constant="34" id="4zk-qx-55G"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Jge-FX-5Dh"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OQK-OZ-un5"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lQn-fB-KPF"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="GGA-Yt-O06" id="h5i-xj-Pmm"/>
-                        <outlet property="titleLabel" destination="fNt-Pd-J1h" id="tts-PF-xAa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-194" y="-799"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="R63-hg-N71">
             <objects>
@@ -75,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-7X-13r">
-                                <rect key="frame" x="19" y="28" width="337.5" height="619"/>
+                                <rect key="frame" x="0.5" y="28" width="375" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4xG-7X-13r" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" multiplier="0.9" id="8bg-ou-vi1"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" id="8bg-ou-vi1"/>
                             <constraint firstItem="4xG-7X-13r" firstAttribute="centerX" secondItem="pPX-Ow-bLA" secondAttribute="centerX" id="ZWA-RL-o0m"/>
                             <constraint firstItem="4xG-7X-13r" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" constant="8" id="lUd-sh-aAv"/>
                             <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" constant="20" id="wNe-SR-7fa"/>

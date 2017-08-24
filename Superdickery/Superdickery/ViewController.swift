@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         self.content?.rowHeight = UITableViewAutomaticDimension
         registerNibs()
         self.content?.dataSource = self
+        print("Table Width: \(String(describing: self.content?.frame.width))")
 //        content?.dataSource = (ContentViewModel.self as! UITableViewDataSource)
-        self.content?.reloadData()
 
     }
 

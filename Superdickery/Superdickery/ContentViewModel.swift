@@ -24,7 +24,6 @@ class ContentViewModel: NSObject {
         for each in HTMLParser.shared.labelTexts {
             items.append(ContentTextElement(labelText: each))
         }
-        print(items)
     }
     
 }
