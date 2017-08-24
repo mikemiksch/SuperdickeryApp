@@ -2,34 +2,66 @@
 //  ViewController.swift
 //  Superdickery
 //
-//  Created by Mike Miksch on 8/8/17.
+//  Created by Mike Miksch on 8/14/17.
 //  Copyright © 2017 Superdickery. All rights reserved.
 //
 
 import UIKit
-import Social
-import SwiftSoup
 
 class ViewController: UIViewController {
-    
-    let session = URLSession.shared
-    
+    @IBOutlet weak var content: UITableView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPage()
+        self.content?.rowHeight = UITableViewAutomaticDimension
+        registerNibs()
+        self.content?.dataSource = self
+//        content?.dataSource = (ContentViewModel.self as! UITableViewDataSource)
+        self.content?.reloadData()
+
     }
-    
-    func fetchPage() {
-        let baseURL = URL(string: "http://www.superdickery.com/random")!
-        let downloadTask = session.downloadTask(with: baseURL, completionHandler: { (location, response, error) -> Void in
-            if error == nil {
-                let data = NSData(contentsOf: location!)
-                let tempData = String(data: data! as Data, encoding: .utf8)
-                print(tempData ?? String(describing: error))
-            }
-        })
-        downloadTask.resume()
+
+    func registerNibs() {
+        let titleNib = UINib(nibName: "TitleCell", bundle: nil)
+        let imageNib = UINib(nibName: "ImageCell", bundle: nil)
+        let textNimb = UINib(nibName: "TextCell", bundle: nil)
+        self.content?.register(titleNib, forCellReuseIdentifier: TitleCell.identifier)
+        self.content?.register(imageNib, forCellReuseIdentifier: ImageCell.identifier)
+        self.content?.register(textNimb, forCellReuseIdentifier: TextCell.identifier)
     }
-    
+
 }
+
+extension ViewController : UITableViewDataSource {
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return ContentViewModel.shared.items.count
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return ContentViewModel.shared.items[section].rowCount
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let item = ContentViewModel.shared.items[indexPath.section]
+            switch item.type {
+            case .title:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: TitleCell.identifier, for: indexPath) as? TitleCell {
+                    cell.item = item
+                    return cell
+                }
+            case .image:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell {
+                    cell.item = item
+                    return cell
+                }
+            case .text:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: TextCell.identifier, for: indexPath) as? TextCell {
+                    cell.item = item
+                    return cell
+                }
+            }
+            return UITableViewCell()
+        }
+    }
+    
 
