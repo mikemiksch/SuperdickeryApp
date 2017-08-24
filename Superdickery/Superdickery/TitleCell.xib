@@ -24,14 +24,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bl1-m5-Yrz">
-                        <rect key="frame" x="0.0" y="11.5" width="320" height="20"/>
-                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="0.5" width="320" height="42.5"/>
+                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="36"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Bl1-m5-Yrz" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="5EF-fx-rbw"/>
+                    <constraint firstItem="Bl1-m5-Yrz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="0.5" id="CAG-6y-WLK"/>
+                    <constraint firstAttribute="bottom" secondItem="Bl1-m5-Yrz" secondAttribute="bottom" constant="0.5" id="FaL-7y-NG7"/>
                     <constraint firstItem="Bl1-m5-Yrz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mH2-Pt-Jx5"/>
                     <constraint firstItem="Bl1-m5-Yrz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tc4-IR-l9Z"/>
                 </constraints>

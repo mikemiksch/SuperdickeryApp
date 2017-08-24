@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		52F5DD68E5B7345BEE5CF3B7 /* Pods_Superdickery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D476AFEAEB8F9858702367F1 /* Pods_Superdickery.framework */; };
 		830844071F4E3DCA00403BD3 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830844061F4E3DCA00403BD3 /* UIExtensions.swift */; };
-		8311A8D81F4E1F9A0037D3B2 /* ImageCellnil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8311A8D61F4E1F9A0037D3B2 /* ImageCellnil.swift */; };
 		8311A8D91F4E1F9A0037D3B2 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8311A8D71F4E1F9A0037D3B2 /* ImageCell.xib */; };
 		834AD7EE1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7ED1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift */; };
 		834AD7F01F4CDBEB0041AF9A /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */; };
@@ -38,7 +37,6 @@
 		22421AD5F7014DEAB0BFCA22 /* Pods-Superdickery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Superdickery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Superdickery/Pods-Superdickery.release.xcconfig"; sourceTree = "<group>"; };
 		793F983C532DA7742444115F /* Pods-Superdickery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Superdickery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Superdickery/Pods-Superdickery.debug.xcconfig"; sourceTree = "<group>"; };
 		830844061F4E3DCA00403BD3 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
-		8311A8D61F4E1F9A0037D3B2 /* ImageCellnil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCellnil.swift; sourceTree = "<group>"; };
 		8311A8D71F4E1F9A0037D3B2 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		834AD7ED1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				83C5CDC21F4E1BCC002DC217 /* TitleCell.swift */,
-				8311A8D61F4E1F9A0037D3B2 /* ImageCellnil.swift */,
 				83BF81C81F4E280E00B8AE22 /* TextCell.swift */,
 				83D70DFD1F4E46F500728C5A /* ImageCell.swift */,
 			);
@@ -335,7 +332,6 @@
 				834AD7FF1F4CE49D0041AF9A /* ContentViewModel.swift in Sources */,
 				830844071F4E3DCA00403BD3 /* UIExtensions.swift in Sources */,
 				834AD7F21F4CE1090041AF9A /* ContentElementType.swift in Sources */,
-				8311A8D81F4E1F9A0037D3B2 /* ImageCellnil.swift in Sources */,
 				834AD7F41F4CE1A60041AF9A /* ContentElement.swift in Sources */,
 				834AD7F01F4CDBEB0041AF9A /* HTMLParser.swift in Sources */,
 			);

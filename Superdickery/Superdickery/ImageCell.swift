@@ -15,6 +15,7 @@ class ImageCell: UITableViewCell {
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
+            cellImage.contentMode = UIViewContentMode.scaleAspectFit
             cellImage.image = item.image
         }
     }

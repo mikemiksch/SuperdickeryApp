@@ -75,14 +75,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-7X-13r">
-                                <rect key="frame" x="0.0" y="28" width="375" height="619"/>
+                                <rect key="frame" x="19" y="28" width="337.5" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4xG-7X-13r" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="2O8-LD-U46"/>
-                            <constraint firstAttribute="trailing" secondItem="4xG-7X-13r" secondAttribute="trailing" id="VMF-KS-d7Y"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" multiplier="0.9" id="8bg-ou-vi1"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="centerX" secondItem="pPX-Ow-bLA" secondAttribute="centerX" id="ZWA-RL-o0m"/>
                             <constraint firstItem="4xG-7X-13r" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" constant="8" id="lUd-sh-aAv"/>
                             <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" constant="20" id="wNe-SR-7fa"/>
                         </constraints>

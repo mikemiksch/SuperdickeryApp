@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.content?.estimatedRowHeight = 10.0
         self.content?.rowHeight = UITableViewAutomaticDimension
         registerNibs()
         self.content?.dataSource = self
