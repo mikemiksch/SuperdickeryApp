@@ -9,59 +9,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Thames-Serial-Heavy-Regular.ttf">
-            <string>Thames-Serial-Heavy-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Content View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ContentViewController" customModule="Superdickery" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-Yt-O06">
-                                <rect key="frame" x="0.0" y="28" width="375" height="605"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fNt-Pd-J1h">
-                                        <rect key="frame" x="19" y="8" width="337.5" height="42"/>
-                                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="top" secondItem="GGA-Yt-O06" secondAttribute="top" constant="8" id="MWk-Sl-H6V"/>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="centerX" secondItem="GGA-Yt-O06" secondAttribute="centerX" id="cH4-Ca-CGn"/>
-                                    <constraint firstItem="fNt-Pd-J1h" firstAttribute="width" secondItem="GGA-Yt-O06" secondAttribute="width" multiplier="0.9" id="rwh-CY-rfQ"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="GGA-Yt-O06" secondAttribute="trailing" id="3BI-5J-b4I"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GGA-Yt-O06" secondAttribute="bottom" constant="34" id="4zk-qx-55G"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Jge-FX-5Dh"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OQK-OZ-un5"/>
-                            <constraint firstItem="GGA-Yt-O06" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lQn-fB-KPF"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="GGA-Yt-O06" id="h5i-xj-Pmm"/>
-                        <outlet property="titleLabel" destination="fNt-Pd-J1h" id="tts-PF-xAa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-194" y="-799"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="R63-hg-N71">
             <objects>
@@ -75,16 +23,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-7X-13r">
-                                <rect key="frame" x="0.0" y="28" width="375" height="619"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-Hq-n43">
+                                <rect key="frame" x="0.0" y="621" width="188" height="46"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilg-zW-ol6">
+                                <rect key="frame" x="187" y="621" width="188" height="46"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Superdickery-Logo1" translatesAutoresizingMaskIntoConstraints="NO" id="IK5-Tk-EKU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="61"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4xG-7X-13r" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="2O8-LD-U46"/>
-                            <constraint firstAttribute="trailing" secondItem="4xG-7X-13r" secondAttribute="trailing" id="VMF-KS-d7Y"/>
-                            <constraint firstItem="4xG-7X-13r" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" constant="8" id="lUd-sh-aAv"/>
-                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" constant="20" id="wNe-SR-7fa"/>
+                            <constraint firstItem="oy9-Hq-n43" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" id="0v7-lr-epD"/>
+                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="oy9-Hq-n43" secondAttribute="bottom" id="3P5-7S-Zmc"/>
+                            <constraint firstItem="IK5-Tk-EKU" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="4if-X2-KAb"/>
+                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="ilg-zW-ol6" secondAttribute="bottom" id="6it-IF-56j"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" id="8bg-ou-vi1"/>
+                            <constraint firstItem="ilg-zW-ol6" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" id="ExL-8f-lck"/>
+                            <constraint firstItem="ilg-zW-ol6" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" constant="187" id="L26-sk-KM1"/>
+                            <constraint firstItem="oy9-Hq-n43" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" multiplier="0.5" id="MHl-gR-sCK"/>
+                            <constraint firstAttribute="trailing" secondItem="ilg-zW-ol6" secondAttribute="trailing" id="O0R-4z-0CB"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="centerX" secondItem="pPX-Ow-bLA" secondAttribute="centerX" id="ZWA-RL-o0m"/>
+                            <constraint firstAttribute="trailing" secondItem="IK5-Tk-EKU" secondAttribute="trailing" id="bZP-iR-97B"/>
+                            <constraint firstItem="oy9-Hq-n43" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="ctd-HZ-k7u"/>
+                            <constraint firstItem="IK5-Tk-EKU" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" id="lIY-as-3du"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" constant="62" id="lUd-sh-aAv"/>
+                            <constraint firstAttribute="trailing" secondItem="oy9-Hq-n43" secondAttribute="trailing" constant="187" id="tQT-zc-8xV"/>
+                            <constraint firstItem="4xG-7X-13r" firstAttribute="top" secondItem="IK5-Tk-EKU" secondAttribute="bottom" constant="1" id="wFz-lb-DsI"/>
+                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="4xG-7X-13r" secondAttribute="bottom" constant="46" id="wNe-SR-7fa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -96,4 +74,7 @@
             <point key="canvasLocation" x="780" y="-787.55622188905556"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Superdickery-Logo1" width="700" height="113"/>
+    </resources>
 </document>

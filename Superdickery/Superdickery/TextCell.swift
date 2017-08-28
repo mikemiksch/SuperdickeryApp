@@ -22,6 +22,8 @@ class TextCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("Cell size: \(self.bounds.size.width)")
+        print("Label width: \(textElementLabel.frame.width)")
 
     }
 //

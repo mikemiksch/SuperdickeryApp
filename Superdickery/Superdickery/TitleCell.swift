@@ -14,7 +14,6 @@ class TitleCell: UITableViewCell {
     
     var item: ContentElement? {
         didSet {
-            print("didSet titleCell")
             guard let item = item as? ContentTitleElement  else { return }
             titleLabel.text = item.labelText
         }

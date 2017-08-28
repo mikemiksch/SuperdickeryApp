@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var content: UITableView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.content?.estimatedRowHeight = 10.0
         self.content?.rowHeight = UITableViewAutomaticDimension
         registerNibs()
         self.content?.dataSource = self
+        print("Table Width: \(String(describing: self.content?.frame.width))")
+        self.content?.separatorStyle = .none
 //        content?.dataSource = (ContentViewModel.self as! UITableViewDataSource)
-        self.content?.reloadData()
 
     }
 

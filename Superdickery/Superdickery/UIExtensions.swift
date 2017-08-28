@@ -27,6 +27,25 @@ extension UIImage {
         }
     }
     
+    func resize(maxWidth: CGFloat) -> UIImage {
+        let size = self.size
+        let ratio = size.height / size.width
+        var newSize = CGSize()
+        if size.width > maxWidth {
+            newSize = CGSize(width: maxWidth, height: maxWidth * ratio)
+        } else {
+            newSize = CGSize(width: size.width, height: size.height)
+        }
+        let newRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: newRect)
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        print(maxWidth)
+        print(self.size.width)
+        return resizedImage!
+    }
+    
 }
 
 extension UIResponder {
