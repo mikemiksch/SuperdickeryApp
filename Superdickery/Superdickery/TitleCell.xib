@@ -25,7 +25,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bl1-m5-Yrz">
                         <rect key="frame" x="0.0" y="0.5" width="320" height="42.5"/>
-                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="36"/>
+                        <fontDescription key="fontDescription" name="Thames-Serial-Heavy-Regular" family="Thames-Serial-Heavy" pointSize="32"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

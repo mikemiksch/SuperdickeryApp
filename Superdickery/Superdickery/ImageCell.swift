@@ -17,24 +17,13 @@ class ImageCell: UITableViewCell {
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
-            cellImage.contentMode = UIViewContentMode.scaleAspectFit
-            if item.image.size.width <= self.bounds.size.width {
-                cellImage.image = item.image
-            } else {
-                cellImage.image = item.image.resize(maxWidth: self.bounds.size.width)
-            }
+            cellImage.image = item.image.resize(maxWidth: (self.frame.size.width))
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Cell size: \(self.bounds.size.width)")
     }
 }
-////
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
+
 
