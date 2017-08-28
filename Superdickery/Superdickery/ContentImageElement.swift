@@ -14,12 +14,24 @@ class ContentImageElement : ContentElement {
         return .image
     }
     
-    var image: UIImage
+    var image = UIImage()
     
     init(element: Element) {
         let src = try! element.attr("src")
-        let url = URL(string: src)!
-        let imageData = NSData(contentsOf: url)!
-        image = UIImage(data: imageData as Data)!
+        OperationQueue.main.addOperation {
+            UIImage.fetchImageWith(src) { (fetchedImage) in
+                self.image = fetchedImage!
+                print("Set image")
+                print(self.image)
+            }
+        }
+//        let url = URL(string: src)!
+//        let imageData = NSData(contentsOf: url)!
+//        image = UIImage(data: imageData as Data)!
     }
 }
+
+//UIImage.fetchImageWith(src) { (fetchedImage) in
+//    self.image = fetchedImage!
+//}
+//print(self.image)

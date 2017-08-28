@@ -17,7 +17,11 @@ class ImageCell: UITableViewCell {
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
-            cellImage.image = item.image.resize(maxWidth: (self.frame.size.width))
+//            cellImage.image = item.image.resize(maxWidth: (self.frame.size.width))
+            OperationQueue.main.addOperation {
+                self.cellImage.image = item.image
+                print(item.image)
+            }
         }
     }
     
