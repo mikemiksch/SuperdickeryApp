@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var content: UITableView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         registerNibs()
         self.content?.dataSource = self
         print("Table Width: \(String(describing: self.content?.frame.width))")
+        self.content?.separatorStyle = .none
 //        content?.dataSource = (ContentViewModel.self as! UITableViewDataSource)
 
     }
