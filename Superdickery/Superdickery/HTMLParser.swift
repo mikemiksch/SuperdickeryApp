@@ -17,7 +17,7 @@ class HTMLParser {
     var labelTexts = [String]()
     
     func fetchPage() -> String {
-        let baseURL = URL(string: "http://www.superdickery.com/batmans-boner")!
+        let baseURL = URL(string: "http://www.superdickery.com/random")!
         let data = NSData(contentsOf: baseURL)
         let html = String(data: data! as Data, encoding: .utf8)!
         return html
