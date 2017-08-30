@@ -10,13 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var randomButton: UIButton!
     
     @IBAction func randomButtonPressed(_ sender: Any) {
+        randomButton.isEnabled = false
         let childView = self.childViewControllers[0] as! ContentViewController
         childView.activityIndicator.isHidden = false
         ContentViewModel.shared.fetch()
         childView.content?.reloadData()
-        childView.viewDidLoad()
+        childView.reenable() { () in
+            self.randomButton.isEnabled = true
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

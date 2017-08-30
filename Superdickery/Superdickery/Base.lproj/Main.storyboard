@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6fh-gK-HsS" id="TwR-lW-ycQ"/>
+                        <outlet property="randomButton" destination="96U-Pw-86h" id="htb-iT-MhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nq7-3f-MGL" userLabel="First Responder" sceneMemberID="firstResponder"/>

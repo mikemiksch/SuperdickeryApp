@@ -25,6 +25,10 @@ class ContentViewController: UIViewController {
         
     }
     
+    func reenable(completion: ()->()){
+        self.viewDidLoad()
+    }
+    
     func loadIn() {
         self.content?.estimatedRowHeight = 1000.0
         self.content?.rowHeight = UITableViewAutomaticDimension
