@@ -18,20 +18,9 @@ class ContentImageElement : ContentElement {
     
     init(element: Element) {
         let src = try! element.attr("src")
-//        OperationQueue.main.addOperation {
-//            UIImage.fetchImageWith(src) { (fetchedImage) in
-//                self.image = fetchedImage!
-//                print("Set image")
-//                print(self.image)
-//            }
-//        }
         let url = URL(string: src)!
         let imageData = NSData(contentsOf: url)!
         image = UIImage(data: imageData as Data)!
     }
 }
 
-//UIImage.fetchImageWith(src) { (fetchedImage) in
-//    self.image = fetchedImage!
-//}
-//print(self.image)
