@@ -24,23 +24,25 @@ class HTMLParser {
     }
     
     func parseHTML(html: String) {
+        imageElements.removeAll()
+        labelTexts.removeAll()
         let html = html
         let doc : Document = try! SwiftSoup.parse(html)
         title = try! doc.select("h1").text()
         let images = try! doc.select(".aligncenter").array()
         let pTags = try! doc.select(".no-bottom").select("p").array()
-        if images.isEmpty || pTags.isEmpty {
-            parseHTML(html: html)
-        } else {
-            for each in images {
-                imageElements.append(each)
+        for each in images {
+            imageElements.append(each)
+        }
+        for each in pTags {
+            let text = try! each.text()
+            if text != "" && text != "Source" && text != "Unsourced" && !text.contains("©") {
+                labelTexts.append(text)
             }
-            for each in pTags {
-                let text = try! each.text()
-                if text != "" && text != "Source" && text != "Unsourced" && !text.contains("©") {
-                    labelTexts.append(text)
-                }
-            }
+        }
+        
+        if imageElements.isEmpty || labelTexts.isEmpty {
+            parseHTML(html: fetchPage())
         }
     }
 }
