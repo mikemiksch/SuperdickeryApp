@@ -15,6 +15,11 @@ class ContentViewModel: NSObject {
     
     override init() {
         super.init()
+        fetch()
+    }
+    
+    func fetch() {
+        items.removeAll()
         let html = HTMLParser.shared.fetchPage()
         HTMLParser.shared.parseHTML(html: html)
         items.append(ContentTitleElement(labelText: HTMLParser.shared.title))

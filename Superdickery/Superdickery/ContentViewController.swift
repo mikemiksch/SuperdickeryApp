@@ -16,19 +16,21 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
         activityIndicator.transform = transform
-        self.activityIndicator.startAnimating()
+        super.viewDidLoad()
+        activityIndicator.startAnimating()
         OperationQueue.main.addOperation {
-            super.viewDidLoad()
-
-            self.content?.estimatedRowHeight = 1000.0
-            self.content?.rowHeight = UITableViewAutomaticDimension
-
-            self.registerNibs()
-            self.content?.dataSource = self
-            self.content?.separatorStyle = .none
-            self.activityIndicator.stopAnimating()
+            self.loadIn()
+            self.activityIndicator.isHidden = true
         }
         
+    }
+    
+    func loadIn() {
+        self.content?.estimatedRowHeight = 1000.0
+        self.content?.rowHeight = UITableViewAutomaticDimension
+        self.registerNibs()
+        self.content?.dataSource = self
+        self.content?.separatorStyle = .none
     }
     
     func registerNibs() {
