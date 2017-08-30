@@ -28,10 +28,10 @@ class HTMLParser {
         let doc : Document = try! SwiftSoup.parse(html)
         title = try! doc.select("h1").text()
         let images = try! doc.select(".aligncenter").array()
-        if images.isEmpty {
+        let pTags = try! doc.select(".no-bottom").select("p").array()
+        if images.isEmpty || pTags.isEmpty {
             parseHTML(html: html)
         } else {
-            let pTags = try! doc.select(".no-bottom").select("p").array()
             for each in images {
                 imageElements.append(each)
             }

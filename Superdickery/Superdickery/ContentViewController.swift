@@ -11,8 +11,12 @@ import UIKit
 class ContentViewController: UIViewController {
     @IBOutlet weak var content: UITableView?
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+        activityIndicator.transform = transform
+        self.activityIndicator.startAnimating()
         OperationQueue.main.addOperation {
             super.viewDidLoad()
 
@@ -20,12 +24,9 @@ class ContentViewController: UIViewController {
             self.content?.rowHeight = UITableViewAutomaticDimension
 
             self.registerNibs()
-            //        OperationQueue.main.addOperation {
             self.content?.dataSource = self
             self.content?.separatorStyle = .none
-            //        }
-            
-            //        content?.dataSource = (ContentViewModel.self as! UITableViewDataSource)
+            self.activityIndicator.stopAnimating()
         }
         
     }

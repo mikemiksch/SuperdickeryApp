@@ -75,6 +75,10 @@
         <scene sceneID="Uzl-qj-U6h">
             <objects>
                 <viewController id="fAr-BT-oCs" customClass="ContentViewController" customModule="Superdickery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tZl-Gt-bHu"/>
+                        <viewControllerLayoutGuide type="bottom" id="N6T-ff-hRO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZy-ar-3fI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,16 +88,23 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4E0-Py-ZCK">
+                                <rect key="frame" x="178" y="253" width="20" height="20"/>
+                                <color key="color" red="0.37647058823529411" green="0.64313725490196072" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="9g4-4D-ptO" secondAttribute="bottom" id="1jP-7K-SZN"/>
+                            <constraint firstItem="4E0-Py-ZCK" firstAttribute="centerX" secondItem="xZy-ar-3fI" secondAttribute="centerX" id="6jw-wL-Kc0"/>
                             <constraint firstItem="9g4-4D-ptO" firstAttribute="top" secondItem="xZy-ar-3fI" secondAttribute="top" id="Bzl-jt-AhM"/>
                             <constraint firstItem="9g4-4D-ptO" firstAttribute="leading" secondItem="xZy-ar-3fI" secondAttribute="leading" id="CwR-6K-7zk"/>
+                            <constraint firstItem="4E0-Py-ZCK" firstAttribute="centerY" secondItem="xZy-ar-3fI" secondAttribute="centerY" id="FCH-qH-RUY"/>
                             <constraint firstAttribute="trailing" secondItem="9g4-4D-ptO" secondAttribute="trailing" id="NjL-Nu-sye"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="4E0-Py-ZCK" id="lOe-KQ-gHR"/>
                         <outlet property="content" destination="9g4-4D-ptO" id="c6P-Gc-Wia"/>
                     </connections>
                 </viewController>
