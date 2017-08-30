@@ -14,7 +14,7 @@ class ContentImageElement : ContentElement {
         return .image
     }
     
-    var image: UIImage
+    var image = UIImage()
     
     init(element: Element) {
         let src = try! element.attr("src")
@@ -23,3 +23,4 @@ class ContentImageElement : ContentElement {
         image = UIImage(data: imageData as Data)!
     }
 }
+

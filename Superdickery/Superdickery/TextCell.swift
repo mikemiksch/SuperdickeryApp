@@ -22,14 +22,6 @@ class TextCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Cell size: \(self.bounds.size.width)")
-        print("Label width: \(textElementLabel.frame.width)")
 
     }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
 }
