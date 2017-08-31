@@ -29,7 +29,6 @@ class HTMLParser {
         let html = html
         let doc : Document = try! SwiftSoup.parse(html)
         title = try! doc.select("h1").text()
-        print(title)
         let images = try! doc.select(".aligncenter").array()
         let pTags = try! doc.select(".no-bottom").select("p").array()
         for each in images {

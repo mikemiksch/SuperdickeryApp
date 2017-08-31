@@ -13,14 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomButton: UIButton!
     
     @IBAction func randomButtonPressed(_ sender: Any) {
-        randomButton.isEnabled = false
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        print("Interaction events now being ignored")
         let childView = self.childViewControllers[0] as! ContentViewController
-        childView.activityIndicator.isHidden = false
-        ContentViewModel.shared.fetch()
-        childView.content?.reloadData()
-        childView.reenable() { () in
-            self.randomButton.isEnabled = true
+        childView.activityIndicator.startAnimating()
+        OperationQueue.main.addOperation {
+            childView.viewDidLoad()
+            ContentViewModel.shared.fetch()
+            childView.content?.reloadData()
+            childView.activityIndicator.stopAnimating()
         }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()

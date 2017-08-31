@@ -21,12 +21,10 @@ class ContentViewController: UIViewController {
         OperationQueue.main.addOperation {
             self.loadIn()
             self.activityIndicator.isHidden = true
+            UIApplication.shared.endIgnoringInteractionEvents()
+            print("No longer ignoring user interaction events")
         }
         
-    }
-    
-    func reenable(completion: ()->()){
-        self.viewDidLoad()
     }
     
     func loadIn() {
@@ -49,6 +47,7 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController : UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return ContentViewModel.shared.items.count
     }
@@ -79,5 +78,3 @@ extension ContentViewController : UITableViewDataSource {
         return UITableViewCell()
     }
 }
-
-
