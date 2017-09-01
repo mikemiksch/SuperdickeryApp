@@ -18,9 +18,9 @@ class ViewController: UIViewController {
         let childView = self.childViewControllers[0] as! ContentViewController
         childView.activityIndicator.startAnimating()
         OperationQueue.main.addOperation {
-            childView.viewDidLoad()
             ContentViewModel.shared.fetch()
             childView.content?.reloadData()
+            childView.viewDidLoad()
             childView.activityIndicator.stopAnimating()
         }
 
