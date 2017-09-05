@@ -15,6 +15,7 @@ class HTMLParser {
     var title = String()
     var imageElements = [Element]()
     var labelTexts = [String]()
+    var shareURL = String()
     
     func fetchPage() -> String {
         let baseURL = URL(string: "http://www.superdickery.com/random")!
@@ -29,6 +30,13 @@ class HTMLParser {
         let html = html
         let doc : Document = try! SwiftSoup.parse(html)
         title = try! doc.select("h1").text()
+        let linkRels = try! doc.select("head").select("link").array()
+        let filteredLinks = linkRels.filter { link in
+            try! link.attr("title").contains("Comments Feed")
+        }
+        shareURL = try! filteredLinks[1].attr("href")
+        shareURL = shareURL.substring(to: shareURL.index(shareURL.endIndex, offsetBy: -5))
+        print(shareURL)
         let images = try! doc.select(".aligncenter").array()
         let pTags = try! doc.select(".no-bottom").select("p").array()
         for each in images {
