@@ -40,7 +40,7 @@ class HTMLParser {
                 labelTexts.append(text)
             }
         }
-        
+        print(title)
         if imageElements.isEmpty || labelTexts.isEmpty {
             parseHTML(html: fetchPage())
         }
