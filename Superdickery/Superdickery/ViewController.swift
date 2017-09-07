@@ -41,7 +41,8 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         blankBackground.addSubview(imageView)
         self.view.addSubview(blankBackground)
-        UIView.animate(withDuration: 1.5, delay: 2.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 2.0, options: .curveEaseOut, animations: {
+            imageView.center.y = imageView.center.y - 20
             imageView.center.y = self.logo.center.y
         }, completion: {(finished:Bool) in
             UIView.animate(withDuration: 0.2, animations: {
