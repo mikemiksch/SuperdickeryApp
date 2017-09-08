@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var randomButton: UIButton!
-    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+    
+    var logo = UIImage()
     
     @IBAction func randomButtonPressed(_ sender: Any) {
         UIApplication.shared.beginIgnoringInteractionEvents()
@@ -26,10 +28,12 @@ class ViewController: UIViewController {
         }
 
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        logo = #imageLiteral(resourceName: "Superdickery-Logo1").resize(maxWidth: self.view.bounds.width)
+        contentViewHeightConstraint.constant = logo.size.height + 20
         animateSplash()
-
     }
     
     
@@ -37,13 +41,12 @@ class ViewController: UIViewController {
         let blankBackground = UIView(frame: self.view.frame)
         blankBackground.backgroundColor = UIColor.white
         let imageView = UIImageView(frame: self.view.frame)
-        imageView.image = #imageLiteral(resourceName: "Superdickery-Logo1").resize(maxWidth: self.view.bounds.width)
         imageView.contentMode = .scaleAspectFit
-        blankBackground.addSubview(imageView)
+        imageView.image = logo
         self.view.addSubview(blankBackground)
-        UIView.animate(withDuration: 0.5, delay: 2.0, options: .curveEaseOut, animations: {
-            imageView.center.y = imageView.center.y - 20
-            imageView.center.y = self.logo.center.y
+        self.view.addSubview(imageView)
+        UIView.animate(withDuration: 0.5, delay: 3.0, options: .curveEaseOut, animations: {
+            imageView.center.y = imageView.image!.size.height / 2 + 20
         }, completion: {(finished:Bool) in
             UIView.animate(withDuration: 0.2, animations: {
                 blankBackground.backgroundColor = UIColor.clear
