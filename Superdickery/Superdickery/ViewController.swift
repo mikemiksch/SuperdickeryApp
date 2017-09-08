@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logo = #imageLiteral(resourceName: "Superdickery-Logo1").resize(maxWidth: self.view.bounds.width)
+        logo = #imageLiteral(resourceName: "Superdickery-Logo1").resizeByWidth(maxWidth: self.view.bounds.width)
         contentViewHeightConstraint.constant = logo.size.height + 20
         animateSplash()
     }

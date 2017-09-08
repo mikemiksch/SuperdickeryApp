@@ -12,17 +12,21 @@ import SwiftSoup
 class ImageCell: UITableViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
-            cellImage.image = item.image.resize(maxWidth: self.bounds.size.width)
+//            if item.image.size.height > item.image.size.width {
+//                cellImage.image = item.image.resizeByHeight()
+//            } else {
+                cellImage.image = item.image.resizeByWidth(maxWidth: self.bounds.size.width)
+//            }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellImage.contentMode = .scaleAspectFit
     }
 }
 
