@@ -32,7 +32,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellImage" destination="F1B-gi-QTe" id="VBJ-I2-1iW"/>
-                <outlet property="heightConstraint" destination="idk-Y3-eSm" id="SLf-mq-ZK0"/>
             </connections>
         </tableViewCell>
     </objects>

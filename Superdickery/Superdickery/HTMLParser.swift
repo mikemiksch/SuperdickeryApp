@@ -29,27 +29,32 @@ class HTMLParser {
         labelTexts.removeAll()
         let html = html
         let doc : Document = try! SwiftSoup.parse(html)
-        title = try! doc.select("h1").text()
-        let linkRels = try! doc.select("head").select("link").array()
-        let filteredLinks = linkRels.filter { link in
-            try! link.attr("title").contains("Comments Feed")
-        }
-        shareURL = try! filteredLinks[1].attr("href")
-        shareURL = shareURL.substring(to: shareURL.index(shareURL.endIndex, offsetBy: -5))
-        print(shareURL)
-        let images = try! doc.select(".aligncenter").array()
-        let pTags = try! doc.select(".no-bottom").select("p").array()
-        for each in images {
-            imageElements.append(each)
-        }
-        for each in pTags {
-            let text = try! each.text()
-            if text != "" && text != "Source" && text != "Unsourced" && !text.contains("©") {
-                labelTexts.append(text)
+        let qfat = Array(try! doc.select("article").select(".category-qfat"))
+        let blog = Array(try! doc.select("article").select(".category-blog"))
+        if qfat.isEmpty && blog.isEmpty {
+            title = try! doc.select("h1").text()
+            let linkRels = try! doc.select("head").select("link").array()
+            let filteredLinks = linkRels.filter { link in
+                try! link.attr("title").contains("Comments Feed")
             }
-        }
-        print(title)
-        if imageElements.isEmpty || labelTexts.isEmpty {
+            shareURL = try! filteredLinks[1].attr("href")
+            shareURL = shareURL.substring(to: shareURL.index(shareURL.endIndex, offsetBy: -5))
+            let images = try! doc.select(".aligncenter").array()
+            let pTags = try! doc.select(".no-bottom").select("p").array()
+            for each in images {
+                imageElements.append(each)
+            }
+            for each in pTags {
+                let text = try! each.text()
+                if text != "" && text != "Source" && text != "Unsourced" && !text.contains("©") {
+                    labelTexts.append(text)
+                }
+            }
+            print(title)
+            if imageElements.isEmpty || labelTexts.isEmpty {
+                parseHTML(html: fetchPage())
+            }
+        } else {
             parseHTML(html: fetchPage())
         }
     }

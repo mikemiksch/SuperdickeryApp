@@ -16,11 +16,7 @@ class ImageCell: UITableViewCell {
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
-//            if item.image.size.height > item.image.size.width {
-//                cellImage.image = item.image.resizeByHeight()
-//            } else {
                 cellImage.image = item.image.resizeByWidth(maxWidth: self.bounds.size.width)
-//            }
         }
     }
     
