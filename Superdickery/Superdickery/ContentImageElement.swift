@@ -14,13 +14,20 @@ class ContentImageElement : ContentElement {
         return .image
     }
     
-    var image = UIImage()
+//    var image = UIImage()
+    var src = String()
     
     init(element: Element) {
-        let src = try! element.attr("src")
-        let url = URL(string: src)!
-        let imageData = NSData(contentsOf: url)!
-        image = UIImage(data: imageData as Data)!
+        src = try! element.attr("src")
+//        imageURL = URL(string: src)!
+//        let suffix = String(src.characters.suffix(4))
+//        print(suffix)
+//        if suffix == ".gif" {
+//            // code
+//        } else {
+//            let imageData = NSData(contentsOf: url)!
+//            image = UIImage(data: imageData as Data)!
+//        }
     }
 }
 

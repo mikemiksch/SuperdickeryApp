@@ -10,7 +10,6 @@
 		52F5DD68E5B7345BEE5CF3B7 /* Pods_Superdickery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D476AFEAEB8F9858702367F1 /* Pods_Superdickery.framework */; };
 		830844071F4E3DCA00403BD3 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830844061F4E3DCA00403BD3 /* UIExtensions.swift */; };
 		8311A8D91F4E1F9A0037D3B2 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8311A8D71F4E1F9A0037D3B2 /* ImageCell.xib */; };
-		834AD7EE1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7ED1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift */; };
 		834AD7F01F4CDBEB0041AF9A /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */; };
 		834AD7F21F4CE1090041AF9A /* ContentElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7F11F4CE1090041AF9A /* ContentElementType.swift */; };
 		834AD7F41F4CE1A60041AF9A /* ContentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7F31F4CE1A60041AF9A /* ContentElement.swift */; };
@@ -38,7 +37,6 @@
 		793F983C532DA7742444115F /* Pods-Superdickery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Superdickery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Superdickery/Pods-Superdickery.debug.xcconfig"; sourceTree = "<group>"; };
 		830844061F4E3DCA00403BD3 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		8311A8D71F4E1F9A0037D3B2 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
-		834AD7ED1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		834AD7F11F4CE1090041AF9A /* ContentElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentElementType.swift; sourceTree = "<group>"; };
 		834AD7F31F4CE1A60041AF9A /* ContentElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentElement.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			children = (
 				83C5CDC11F4E1BA5002DC217 /* Content Cells */,
 				838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */,
-				834AD7ED1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift */,
 				834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */,
 				834AD7FD1F4CE46C0041AF9A /* Content Elements */,
 				830844061F4E3DCA00403BD3 /* UIExtensions.swift */,
@@ -322,7 +319,6 @@
 				83EFBE4E1F4254050005E46F /* ViewController.swift in Sources */,
 				834AD7FC1F4CE3F70041AF9A /* ContentTextElement.swift in Sources */,
 				83C5CDC41F4E1BCC002DC217 /* TitleCell.swift in Sources */,
-				834AD7EE1F4CD11B0041AF9A /* iOSDevCenters+GIF.swift in Sources */,
 				838C8A301F3A59DF0097FCF4 /* ContentViewController.swift in Sources */,
 				83D70DFE1F4E46F500728C5A /* ImageCell.swift in Sources */,
 				834AD7F61F4CE23F0041AF9A /* ContentTitleElement.swift in Sources */,

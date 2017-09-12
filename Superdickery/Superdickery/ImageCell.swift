@@ -16,9 +16,16 @@ class ImageCell: UITableViewCell {
     var item: ContentElement? {
         didSet {
             guard let item = item as? ContentImageElement  else { return }
-                cellImage.image = item.image.resizeByWidth(maxWidth: self.bounds.size.width)
+                let suffix = String(item.src.characters.suffix(4))
+                let imageData = NSData(contentsOf: URL(string: item.src)!)
+                if suffix == ".gif" {
+                    cellImage.animate(withGIFData: imageData! as Data)
+                } else {
+                    let image = UIImage(data: imageData! as Data)
+                    cellImage.image = image?.resizeByWidth(maxWidth: self.bounds.size.width)
+                }
+            }
         }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
