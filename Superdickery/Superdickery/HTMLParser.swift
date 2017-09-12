@@ -18,7 +18,7 @@ class HTMLParser {
     var shareURL = String()
     
     func fetchPage() -> String {
-        let baseURL = URL(string: "http://www.superdickery.com/wait-thats-not-magnetism/")!
+        let baseURL = URL(string: "http://www.superdickery.com/random")!
         let data = NSData(contentsOf: baseURL)
         let html = String(data: data! as Data, encoding: .utf8)!
         return html
@@ -51,7 +51,7 @@ class HTMLParser {
                 }
             }
             print(title)
-            if imageElements.isEmpty {
+            if imageElements.isEmpty || title == "Did You Know?"{
                 parseHTML(html: fetchPage())
             }
         } else {
