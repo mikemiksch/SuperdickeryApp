@@ -27,12 +27,23 @@ extension UIImage {
         }
     }
     
-    func resize(maxWidth: CGFloat) -> UIImage {
+    func resizeByWidth(maxWidth: CGFloat) -> UIImage {
         let scaleFactor = maxWidth / self.size.width
         let height = self.size.height * scaleFactor
         
         UIGraphicsBeginImageContext(CGSize(width: maxWidth, height: height))
         self.draw(in: CGRect(x: 0, y: 0, width: maxWidth, height: height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage!
+    }
+    
+    func resizeByHeight() -> UIImage {
+        let scaleFactor = 700 / self.size.height
+        let width = self.size.width * scaleFactor
+        
+        UIGraphicsBeginImageContext(CGSize(width: width, height: 700))
+        self.draw(in: CGRect(x: 0, y: 0, width: width, height: 700))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resizedImage!

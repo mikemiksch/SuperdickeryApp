@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E3d-bw-4Ee">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tAu-m3-mFt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pPX-Ow-bLA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-Hq-n43">
-                                <rect key="frame" x="0.0" y="613" width="188" height="54"/>
+                                <rect key="frame" x="0.0" y="514" width="160" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Random">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,15 +32,12 @@
                                     <action selector="randomButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="8Ap-ZD-JGX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Superdickery-Logo1" translatesAutoresizingMaskIntoConstraints="NO" id="IK5-Tk-EKU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="59"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-Pw-86h">
-                                <rect key="frame" x="187" y="612" width="188" height="55"/>
+                                <rect key="frame" x="160" y="513" width="160" height="55"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fh-gK-HsS">
-                                <rect key="frame" x="0.0" y="87" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="87" width="320" height="427"/>
                                 <connections>
                                     <segue destination="fAr-BT-oCs" kind="embed" id="dEl-14-j1S"/>
                                 </connections>
@@ -48,15 +45,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6fh-gK-HsS" firstAttribute="leading" secondItem="IK5-Tk-EKU" secondAttribute="leading" id="1Mr-x8-8Gt"/>
                             <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="oy9-Hq-n43" secondAttribute="bottom" id="3P5-7S-Zmc"/>
                             <constraint firstItem="oy9-Hq-n43" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" multiplier="0.5" id="MHl-gR-sCK"/>
-                            <constraint firstItem="IK5-Tk-EKU" firstAttribute="top" secondItem="7qx-9C-aMp" secondAttribute="bottom" id="OYf-cb-8GK"/>
-                            <constraint firstItem="6fh-gK-HsS" firstAttribute="trailing" secondItem="IK5-Tk-EKU" secondAttribute="trailing" id="PUX-VS-EFf"/>
                             <constraint firstAttribute="trailing" secondItem="6fh-gK-HsS" secondAttribute="trailing" id="UvM-6m-f2h"/>
                             <constraint firstItem="6fh-gK-HsS" firstAttribute="top" secondItem="pPX-Ow-bLA" secondAttribute="top" constant="87" id="X4B-xr-csR"/>
                             <constraint firstItem="oy9-Hq-n43" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="ctd-HZ-k7u"/>
-                            <constraint firstItem="6fh-gK-HsS" firstAttribute="top" secondItem="IK5-Tk-EKU" secondAttribute="bottom" constant="8" symbolic="YES" id="iJW-mw-hQe"/>
                             <constraint firstItem="96U-Pw-86h" firstAttribute="width" secondItem="oy9-Hq-n43" secondAttribute="width" id="k2V-Aa-bzx"/>
                             <constraint firstAttribute="bottom" secondItem="6fh-gK-HsS" secondAttribute="bottom" constant="54" id="ng3-Py-Xzu"/>
                             <constraint firstItem="96U-Pw-86h" firstAttribute="bottom" secondItem="tAu-m3-mFt" secondAttribute="top" id="pNT-11-4KQ"/>
@@ -68,12 +61,13 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6fh-gK-HsS" id="TwR-lW-ycQ"/>
+                        <outlet property="contentViewHeightConstraint" destination="X4B-xr-csR" id="aSc-vV-5SL"/>
                         <outlet property="randomButton" destination="96U-Pw-86h" id="htb-iT-MhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nq7-3f-MGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="-787.55622188905556"/>
+            <point key="canvasLocation" x="779.8828125" y="-787.99414348462653"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="Uzl-qj-U6h">
@@ -84,16 +78,16 @@
                         <viewControllerLayoutGuide type="bottom" id="N6T-ff-hRO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZy-ar-3fI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9g4-4D-ptO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <activityIndicatorView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4E0-Py-ZCK">
-                                <rect key="frame" x="178" y="253" width="20" height="20"/>
+                                <rect key="frame" x="150" y="203.5" width="20" height="20"/>
                                 <color key="color" red="0.37647058823529411" green="0.64313725490196072" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -117,7 +111,4 @@
             <point key="canvasLocation" x="1549.5999999999999" y="-788.00599700149928"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Superdickery-Logo1" width="700" height="113"/>
-    </resources>
 </document>

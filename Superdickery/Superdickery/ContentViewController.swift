@@ -24,7 +24,7 @@ class ContentViewController: UIViewController {
             UIApplication.shared.endIgnoringInteractionEvents()
             print("No longer ignoring user interaction events")
         }
-        
+        content?.reloadData()
     }
     
     func loadIn() {
