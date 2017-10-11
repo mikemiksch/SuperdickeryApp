@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
@@ -16,10 +17,11 @@ class ViewController: UIViewController {
     var logo = UIImage()
     
     @IBAction func randomButtonPressed(_ sender: Any) {
+        let childView = self.childViewControllers[0] as! ContentViewController
+        childView.activityIndicator.isHidden = false
+        childView.activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         print("Interaction events now being ignored")
-        let childView = self.childViewControllers[0] as! ContentViewController
-        childView.activityIndicator.startAnimating()
         OperationQueue.main.addOperation {
             ContentViewModel.shared.fetch()
             childView.content?.reloadData()
@@ -28,6 +30,13 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let shareURL = URL(string: HTMLParser.shared.shareURL)!
+        let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
+        self.present(shareViewController, animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +54,7 @@ class ViewController: UIViewController {
         imageView.image = logo
         self.view.addSubview(blankBackground)
         self.view.addSubview(imageView)
-        UIView.animate(withDuration: 0.5, delay: 3.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.75, delay: 3.0, options: .curveEaseInOut, animations: {
             imageView.center.y = imageView.image!.size.height / 2 + 20
         }, completion: {(finished:Bool) in
             UIView.animate(withDuration: 0.2, animations: {
@@ -56,7 +65,6 @@ class ViewController: UIViewController {
         })
         
     }
-
 }
 
 

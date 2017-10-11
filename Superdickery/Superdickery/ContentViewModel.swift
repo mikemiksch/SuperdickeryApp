@@ -10,7 +10,6 @@ import UIKit
 
 class ContentViewModel: NSObject {
     var items = [ContentElement]()
-    var shareURL = String()
     
     static let shared = ContentViewModel()
     
@@ -30,7 +29,6 @@ class ContentViewModel: NSObject {
         for each in HTMLParser.shared.labelTexts {
             items.append(ContentTextElement(labelText: each))
         }
-        shareURL = HTMLParser.shared.shareURL
     }
     
 }

@@ -13,14 +13,11 @@ class ContentImageElement : ContentElement {
     var type: ContentElementType {
         return .image
     }
-    
-    var image = UIImage()
+
+    var src = String()
     
     init(element: Element) {
-        let src = try! element.attr("src")
-        let url = URL(string: src)!
-        let imageData = NSData(contentsOf: url)!
-        image = UIImage(data: imageData as Data)!
+        src = try! element.attr("src")
     }
 }
 

@@ -11,7 +11,6 @@ import UIKit
 class TextCell: UITableViewCell {
 
     @IBOutlet weak var textElementLabel: UILabel!
-
     
     var item: ContentElement? {
         didSet {
@@ -22,6 +21,5 @@ class TextCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 }

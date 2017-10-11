@@ -51,7 +51,7 @@ class HTMLParser {
                 }
             }
             print(title)
-            if imageElements.isEmpty || labelTexts.isEmpty {
+            if imageElements.isEmpty || title == "Did You Know?"{
                 parseHTML(html: fetchPage())
             }
         } else {
