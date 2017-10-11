@@ -35,6 +35,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-Pw-86h">
                                 <rect key="frame" x="160" y="513" width="160" height="55"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="vzF-HG-27a"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fh-gK-HsS">
                                 <rect key="frame" x="0.0" y="87" width="320" height="427"/>

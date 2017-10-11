@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
@@ -29,6 +30,13 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let shareURL = URL(string: HTMLParser.shared.shareURL)!
+        let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
+        self.present(shareViewController, animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +65,6 @@ class ViewController: UIViewController {
         })
         
     }
-
 }
 
 
