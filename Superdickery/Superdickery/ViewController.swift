@@ -12,6 +12,7 @@ import Social
 class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var randomButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
     var logo = UIImage()
@@ -43,6 +44,16 @@ class ViewController: UIViewController {
         logo = #imageLiteral(resourceName: "Superdickery-Logo1").resizeByWidth(maxWidth: self.view.bounds.width)
         contentViewHeightConstraint.constant = logo.size.height + 20
         animateSplash()
+        randomButton.layer.cornerRadius = 10
+        randomButton.layer.borderWidth = 3
+        randomButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
+        shareButton.layer.cornerRadius = 10
+        shareButton.layer.borderWidth = 3
+        shareButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
+
+        // Red: #88171a
+        // Yellow: ecbb09
+        // Blue: 0071ba
     }
     
     

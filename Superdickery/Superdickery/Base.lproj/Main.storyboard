@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E3d-bw-4Ee">
-    <device id="retina4_0" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Franklin Gothic Heavy Regular.ttf">
+            <string>FranklinGothic-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="R63-hg-N71">
@@ -19,58 +24,64 @@
                         <viewControllerLayoutGuide type="bottom" id="tAu-m3-mFt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pPX-Ow-bLA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-Hq-n43">
-                                <rect key="frame" x="0.0" y="514" width="160" height="54"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="1320" width="488" height="38"/>
+                                <color key="backgroundColor" red="0.53333333333333333" green="0.090196078431372548" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="FranklinGothic-Heavy" family="Franklin Gothic Heavy" pointSize="17"/>
                                 <state key="normal" title="Random">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.92549019610000005" green="0.73333333329999995" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="randomButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="8Ap-ZD-JGX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-Pw-86h">
-                                <rect key="frame" x="160" y="513" width="160" height="55"/>
-                                <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="shareButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="vzF-HG-27a"/>
+                                    <action selector="randomButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="rbr-gs-Tnw"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fh-gK-HsS">
-                                <rect key="frame" x="0.0" y="87" width="320" height="427"/>
+                                <rect key="frame" x="0.0" y="87" width="1024" height="1225"/>
                                 <connections>
                                     <segue destination="fAr-BT-oCs" kind="embed" id="dEl-14-j1S"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-Pw-86h" userLabel="Share Button">
+                                <rect key="frame" x="516" y="1320" width="488" height="38"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.73333333329999995" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="FranklinGothic-Heavy" family="Franklin Gothic Heavy" pointSize="17"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.53333333329999999" green="0.090196078430000007" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="E3d-bw-4Ee" eventType="touchUpInside" id="U88-AP-UhS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="oy9-Hq-n43" secondAttribute="bottom" id="3P5-7S-Zmc"/>
-                            <constraint firstItem="oy9-Hq-n43" firstAttribute="width" secondItem="pPX-Ow-bLA" secondAttribute="width" multiplier="0.5" id="MHl-gR-sCK"/>
+                            <constraint firstItem="oy9-Hq-n43" firstAttribute="top" secondItem="6fh-gK-HsS" secondAttribute="bottom" constant="8" id="9Fc-Ln-Cge"/>
+                            <constraint firstItem="96U-Pw-86h" firstAttribute="trailing" secondItem="pPX-Ow-bLA" secondAttribute="trailingMargin" id="ECT-SC-sxa"/>
+                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="96U-Pw-86h" secondAttribute="bottom" constant="8" id="LdM-rX-3JL"/>
+                            <constraint firstItem="oy9-Hq-n43" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leadingMargin" id="Rth-iO-zrK"/>
                             <constraint firstAttribute="trailing" secondItem="6fh-gK-HsS" secondAttribute="trailing" id="UvM-6m-f2h"/>
                             <constraint firstItem="6fh-gK-HsS" firstAttribute="top" secondItem="pPX-Ow-bLA" secondAttribute="top" constant="87" id="X4B-xr-csR"/>
-                            <constraint firstItem="oy9-Hq-n43" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="ctd-HZ-k7u"/>
-                            <constraint firstItem="96U-Pw-86h" firstAttribute="width" secondItem="oy9-Hq-n43" secondAttribute="width" id="k2V-Aa-bzx"/>
+                            <constraint firstItem="96U-Pw-86h" firstAttribute="width" secondItem="oy9-Hq-n43" secondAttribute="width" id="XRO-Wt-JO2"/>
+                            <constraint firstItem="96U-Pw-86h" firstAttribute="top" secondItem="6fh-gK-HsS" secondAttribute="bottom" constant="8" id="jbZ-i9-hd9"/>
+                            <constraint firstItem="tAu-m3-mFt" firstAttribute="top" secondItem="oy9-Hq-n43" secondAttribute="bottom" constant="8" id="kWK-Va-tnU"/>
                             <constraint firstAttribute="bottom" secondItem="6fh-gK-HsS" secondAttribute="bottom" constant="54" id="ng3-Py-Xzu"/>
-                            <constraint firstItem="96U-Pw-86h" firstAttribute="bottom" secondItem="tAu-m3-mFt" secondAttribute="top" id="pNT-11-4KQ"/>
-                            <constraint firstItem="oy9-Hq-n43" firstAttribute="top" secondItem="6fh-gK-HsS" secondAttribute="bottom" id="uCE-qU-tRh"/>
                             <constraint firstItem="6fh-gK-HsS" firstAttribute="leading" secondItem="pPX-Ow-bLA" secondAttribute="leading" id="uk5-Yg-cvH"/>
-                            <constraint firstItem="96U-Pw-86h" firstAttribute="height" secondItem="oy9-Hq-n43" secondAttribute="height" constant="1" id="vJX-DZ-Yq7"/>
-                            <constraint firstItem="6fh-gK-HsS" firstAttribute="trailing" secondItem="96U-Pw-86h" secondAttribute="trailing" id="yS3-qV-Wee"/>
+                            <constraint firstItem="96U-Pw-86h" firstAttribute="leading" secondItem="oy9-Hq-n43" secondAttribute="trailing" constant="8" id="z5W-eH-GGV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6fh-gK-HsS" id="TwR-lW-ycQ"/>
                         <outlet property="contentViewHeightConstraint" destination="X4B-xr-csR" id="aSc-vV-5SL"/>
-                        <outlet property="randomButton" destination="96U-Pw-86h" id="htb-iT-MhL"/>
+                        <outlet property="randomButton" destination="oy9-Hq-n43" id="iaB-wP-JGX"/>
+                        <outlet property="shareButton" destination="96U-Pw-86h" id="6h4-HW-qr4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nq7-3f-MGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779.8828125" y="-787.99414348462653"/>
+            <point key="canvasLocation" x="778.125" y="-788.02816901408448"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="Uzl-qj-U6h">
@@ -81,17 +92,17 @@
                         <viewControllerLayoutGuide type="bottom" id="N6T-ff-hRO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZy-ar-3fI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1225"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9g4-4D-ptO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <activityIndicatorView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4E0-Py-ZCK">
-                                <rect key="frame" x="150" y="203.5" width="20" height="20"/>
-                                <color key="color" red="0.37647058823529411" green="0.64313725490196072" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="502" y="602.5" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.44313725490196076" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
