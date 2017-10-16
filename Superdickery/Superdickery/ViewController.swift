@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let childView = self.childViewControllers[0] as! ContentViewController
         childView.activityIndicator.isHidden = false
         childView.activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        randomButton.isUserInteractionEnabled = false
         print("Interaction events now being ignored")
         OperationQueue.main.addOperation {
             ContentViewModel.shared.fetch()
@@ -54,10 +54,6 @@ class ViewController: UIViewController {
         shareButton.layer.cornerRadius = 10
         shareButton.layer.borderWidth = 3
         shareButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
-
-        // Red: #88171a
-        // Yellow: ecbb09
-        // Blue: 0071ba
     }
     
     
