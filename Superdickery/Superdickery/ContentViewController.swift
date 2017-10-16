@@ -21,7 +21,8 @@ class ContentViewController: UIViewController {
         OperationQueue.main.addOperation {
             self.loadIn()
             self.activityIndicator.isHidden = true
-            UIApplication.shared.endIgnoringInteractionEvents()
+            let parent = self.parent as! ViewController
+            parent.randomButton.isUserInteractionEnabled = true
             print("No longer ignoring user interaction events")
         }
         content?.reloadData()
