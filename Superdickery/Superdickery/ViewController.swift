@@ -35,6 +35,10 @@ class ViewController: UIViewController {
     @IBAction func shareButtonPressed(_ sender: Any) {
         let shareURL = URL(string: HTMLParser.shared.shareURL)!
         let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            shareViewController.popoverPresentationController?.sourceView = self.view
+            shareViewController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+        }
         self.present(shareViewController, animated: true, completion: nil)
     }
     
