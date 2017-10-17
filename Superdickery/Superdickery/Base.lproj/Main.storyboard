@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E3d-bw-4Ee">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,11 +24,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tAu-m3-mFt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pPX-Ow-bLA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-Hq-n43">
-                                <rect key="frame" x="20" y="1320" width="488" height="38"/>
+                                <rect key="frame" x="20" y="690" width="183" height="38"/>
                                 <color key="backgroundColor" red="0.53333333333333333" green="0.090196078431372548" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="FranklinGothic-Heavy" family="Franklin Gothic Heavy" pointSize="17"/>
                                 <state key="normal" title="Random">
@@ -39,13 +39,13 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fh-gK-HsS">
-                                <rect key="frame" x="0.0" y="87" width="1024" height="1225"/>
+                                <rect key="frame" x="0.0" y="87" width="414" height="595"/>
                                 <connections>
                                     <segue destination="fAr-BT-oCs" kind="embed" id="dEl-14-j1S"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-Pw-86h" userLabel="Share Button">
-                                <rect key="frame" x="516" y="1320" width="488" height="38"/>
+                                <rect key="frame" x="211" y="690" width="183" height="38"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.73333333329999995" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="FranklinGothic-Heavy" family="Franklin Gothic Heavy" pointSize="17"/>
                                 <state key="normal" title="Share">
@@ -92,16 +92,16 @@
                         <viewControllerLayoutGuide type="bottom" id="N6T-ff-hRO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZy-ar-3fI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1225"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9g4-4D-ptO">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1225"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <activityIndicatorView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4E0-Py-ZCK">
-                                <rect key="frame" x="502" y="602.5" width="20" height="20"/>
+                                <rect key="frame" x="197" y="287.66666666666669" width="20" height="20"/>
                                 <color key="color" red="0.0" green="0.44313725490196076" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>

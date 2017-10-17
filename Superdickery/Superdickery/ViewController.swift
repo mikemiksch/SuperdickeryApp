@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             childView.content?.reloadData()
             childView.viewDidLoad()
             childView.activityIndicator.stopAnimating()
+            self.randomButton.isUserInteractionEnabled = true
         }
 
     }
@@ -55,8 +56,7 @@ class ViewController: UIViewController {
         shareButton.layer.borderWidth = 3
         shareButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
     }
-    
-    
+
     func animateSplash() {
         let blankBackground = UIView(frame: self.view.frame)
         blankBackground.backgroundColor = UIColor.white

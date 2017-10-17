@@ -14,18 +14,32 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
-        let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
-        activityIndicator.transform = transform
         super.viewDidLoad()
-        activityIndicator.startAnimating()
-        OperationQueue.main.addOperation {
-            self.loadIn()
-            self.activityIndicator.isHidden = true
-            let parent = self.parent as! ViewController
-            parent.randomButton.isUserInteractionEnabled = true
-            print("No longer ignoring user interaction events")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        activityIndicator.isHidden = true
+        if Reachability.isConnectedToNetwork() {
+            let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            activityIndicator.transform = transform
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+            OperationQueue.main.addOperation {
+                self.loadIn()
+                self.content?.reloadData()
+                self.activityIndicator.isHidden = true
+//                let parent = self.parent as! ViewController
+//                parent.randomButton.isUserInteractionEnabled = true
+//                print("No longer ignoring user interaction events")
+            }
+
+        } else {
+            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+            connectionAlert.addAction(okay)
+            self.present(connectionAlert, animated: true, completion: nil)
         }
-        content?.reloadData()
     }
     
     func loadIn() {
@@ -44,5 +58,17 @@ class ContentViewController: UIViewController {
         self.content?.register(imageNib, forCellReuseIdentifier: ImageCell.identifier)
         self.content?.register(textNimb, forCellReuseIdentifier: TextCell.identifier)
     }
+    
+//    func checkConnectivity() -> Bool {
+//        if currentReachabilityStatus == .notReachable {
+//            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+//            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            connectionAlert.addAction(okay)
+//            self.present(connectionAlert, animated: true, completion: nil)
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
     
 }
