@@ -19,7 +19,7 @@
 		834AD7FC1F4CE3F70041AF9A /* ContentTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7FB1F4CE3F70041AF9A /* ContentTextElement.swift */; };
 		834AD7FF1F4CE49D0041AF9A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7FE1F4CE49D0041AF9A /* ContentViewModel.swift */; };
 		83641D741F953FE8002B9D7D /* Franklin Gothic Heavy Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83641D731F953FCC002B9D7D /* Franklin Gothic Heavy Regular.ttf */; };
-		83641D781F955BEF002B9D7D /* NSObject+currentReachabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83641D771F955BEF002B9D7D /* NSObject+currentReachabilityStatus.swift */; };
+		8379A4B61F9681BC0092BCE7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8379A4B51F9681BC0092BCE7 /* Reachability.swift */; };
 		837BA75B1F4639100081E13A /* Thames-Serial-Heavy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837BA75A1F4639040081E13A /* Thames-Serial-Heavy-Regular.ttf */; };
 		838C8A2E1F3A59DF0097FCF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */; };
 		838C8A301F3A59DF0097FCF4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C8A2F1F3A59DF0097FCF4 /* ContentViewController.swift */; };
@@ -48,7 +48,7 @@
 		834AD7FB1F4CE3F70041AF9A /* ContentTextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextElement.swift; sourceTree = "<group>"; };
 		834AD7FE1F4CE49D0041AF9A /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		83641D731F953FCC002B9D7D /* Franklin Gothic Heavy Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Franklin Gothic Heavy Regular.ttf"; path = "../../../../../Downloads/Franklin Gothic Heavy Regular/Franklin Gothic Heavy Regular.ttf"; sourceTree = "<group>"; };
-		83641D771F955BEF002B9D7D /* NSObject+currentReachabilityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+currentReachabilityStatus.swift"; sourceTree = "<group>"; };
+		8379A4B51F9681BC0092BCE7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = /Users/MacDaddy/Desktop/Projects/SuperdickeryApp/Superdickery/Superdickery/Reachability.swift; sourceTree = "<absolute>"; };
 		837BA75A1F4639040081E13A /* Thames-Serial-Heavy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thames-Serial-Heavy-Regular.ttf"; sourceTree = "<group>"; };
 		838C8A2A1F3A59DF0097FCF4 /* Superdickery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superdickery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */,
 				834AD7FD1F4CE46C0041AF9A /* Content Elements */,
 				830844061F4E3DCA00403BD3 /* UIExtensions.swift */,
-				83641D771F955BEF002B9D7D /* NSObject+currentReachabilityStatus.swift */,
+				8379A4B51F9681BC0092BCE7 /* Reachability.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -328,6 +328,7 @@
 				83C5CDC41F4E1BCC002DC217 /* TitleCell.swift in Sources */,
 				838C8A301F3A59DF0097FCF4 /* ContentViewController.swift in Sources */,
 				83D70DFE1F4E46F500728C5A /* ImageCell.swift in Sources */,
+				8379A4B61F9681BC0092BCE7 /* Reachability.swift in Sources */,
 				834AD7F61F4CE23F0041AF9A /* ContentTitleElement.swift in Sources */,
 				834AD7FA1F4CE39E0041AF9A /* ContentVideoElement.swift in Sources */,
 				834AD7F81F4CE2FE0041AF9A /* ContentImageElement.swift in Sources */,
@@ -336,7 +337,6 @@
 				830844071F4E3DCA00403BD3 /* UIExtensions.swift in Sources */,
 				834AD7F21F4CE1090041AF9A /* ContentElementType.swift in Sources */,
 				834AD7F41F4CE1A60041AF9A /* ContentElement.swift in Sources */,
-				83641D781F955BEF002B9D7D /* NSObject+currentReachabilityStatus.swift in Sources */,
 				834AD7F01F4CDBEB0041AF9A /* HTMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

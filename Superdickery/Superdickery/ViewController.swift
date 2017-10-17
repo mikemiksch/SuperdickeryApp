@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             childView.content?.reloadData()
             childView.viewDidLoad()
             childView.activityIndicator.stopAnimating()
+            self.randomButton.isUserInteractionEnabled = true
         }
 
     }

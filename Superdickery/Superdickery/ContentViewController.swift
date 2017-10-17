@@ -15,26 +15,30 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(currentReachabilityStatus)
-        if checkConnectivity() {
-            print(currentReachabilityStatus)
+        activityIndicator.isHidden = true
+        if Reachability.isConnectedToNetwork() {
             let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             activityIndicator.transform = transform
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
             OperationQueue.main.addOperation {
                 self.loadIn()
+                self.content?.reloadData()
                 self.activityIndicator.isHidden = true
-                let parent = self.parent as! ViewController
-                parent.randomButton.isUserInteractionEnabled = true
-                print("No longer ignoring user interaction events")
+//                let parent = self.parent as! ViewController
+//                parent.randomButton.isUserInteractionEnabled = true
+//                print("No longer ignoring user interaction events")
             }
-            content?.reloadData()
+
+        } else {
+            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+            connectionAlert.addAction(okay)
+            self.present(connectionAlert, animated: true, completion: nil)
         }
     }
     
@@ -55,16 +59,16 @@ class ContentViewController: UIViewController {
         self.content?.register(textNimb, forCellReuseIdentifier: TextCell.identifier)
     }
     
-    func checkConnectivity() -> Bool {
-        if currentReachabilityStatus == .notReachable {
-            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-            connectionAlert.addAction(okay)
-            self.present(connectionAlert, animated: true, completion: nil)
-            return false
-        } else {
-            return true
-        }
-    }
+//    func checkConnectivity() -> Bool {
+//        if currentReachabilityStatus == .notReachable {
+//            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+//            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            connectionAlert.addAction(okay)
+//            self.present(connectionAlert, animated: true, completion: nil)
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
     
 }
