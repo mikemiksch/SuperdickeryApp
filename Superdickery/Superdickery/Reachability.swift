@@ -9,6 +9,9 @@ import Foundation
 import SystemConfiguration
 
 class Reachability {
+    
+    // This function was written by StackOverflow user Patel Jigar (https://stackoverflow.com/users/4918968/patel-jigar)
+    // in answer to this question: https://stackoverflow.com/questions/39558868/check-internet-connection-ios-10
     class func isConnectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
