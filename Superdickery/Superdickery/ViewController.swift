@@ -18,29 +18,30 @@ class ViewController: UIViewController {
     var logo = UIImage()
     
     @IBAction func randomButtonPressed(_ sender: Any) {
-        let childView = self.childViewControllers[0] as! ContentViewController
-        childView.activityIndicator.isHidden = false
-        childView.activityIndicator.startAnimating()
-        randomButton.isUserInteractionEnabled = false
-        print("Interaction events now being ignored")
-        OperationQueue.main.addOperation {
-            ContentViewModel.shared.fetch()
-            childView.content?.reloadData()
-            childView.viewDidLoad()
-            childView.activityIndicator.stopAnimating()
-            self.randomButton.isUserInteractionEnabled = true
+        if Reachability.isConnectedToNetwork() {
+            let childView = self.childViewControllers[0] as! ContentViewController
+            randomButton.isUserInteractionEnabled = false
+            print("Random button disabled")
+            DispatchQueue.main.async {
+                childView.refreshContent()
+            }
+        } else {
+            presentConnectionWarning()
         }
-
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
-        let shareURL = URL(string: HTMLParser.shared.shareURL)!
-        let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            shareViewController.popoverPresentationController?.sourceView = self.view
-            shareViewController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+        if Reachability.isConnectedToNetwork() {
+            let shareURL = URL(string: HTMLParser.shared.shareURL)!
+            let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                shareViewController.popoverPresentationController?.sourceView = self.view
+                shareViewController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+            }
+            self.present(shareViewController, animated: true, completion: nil)
+        } else {
+            presentConnectionWarning()
         }
-        self.present(shareViewController, animated: true, completion: nil)
     }
     
     
@@ -55,6 +56,13 @@ class ViewController: UIViewController {
         shareButton.layer.cornerRadius = 10
         shareButton.layer.borderWidth = 3
         shareButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if !Reachability.isConnectedToNetwork() {
+            presentConnectionWarning()
+        }
     }
 
     func animateSplash() {
@@ -74,7 +82,13 @@ class ViewController: UIViewController {
                 blankBackground.removeFromSuperview()
             })
         })
-        
+    }
+    
+    func presentConnectionWarning() {
+        let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+        let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+        connectionAlert.addAction(okay)
+        self.present(connectionAlert, animated: true, completion: nil)
     }
 }
 

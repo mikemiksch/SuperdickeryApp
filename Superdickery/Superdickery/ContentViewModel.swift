@@ -15,7 +15,6 @@ class ContentViewModel: NSObject {
     
     override init() {
         super.init()
-        fetch()
     }
     
     func fetch() {
