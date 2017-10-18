@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     @IBAction func randomButtonPressed(_ sender: Any) {
         if Reachability.isConnectedToNetwork() {
             let childView = self.childViewControllers[0] as! ContentViewController
-            childView.activityIndicator.isHidden = false
-            childView.activityIndicator.startAnimating()
             randomButton.isUserInteractionEnabled = false
             print("Random button disabled")
             DispatchQueue.main.async {
