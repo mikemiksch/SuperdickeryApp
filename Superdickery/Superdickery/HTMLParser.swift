@@ -20,6 +20,13 @@ class HTMLParser {
     func fetchPage() -> String {
         let baseURL = URL(string: "http://www.superdickery.com/random")!
         let data = NSData(contentsOf: baseURL)
+        let request = URLRequest(url: baseURL)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse {
+                print(httpResponse.statusCode)
+            }
+        }
+        task.resume()
         let html = String(data: data! as Data, encoding: .utf8)!
         return html
     }
