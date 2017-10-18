@@ -18,29 +18,42 @@ class ViewController: UIViewController {
     var logo = UIImage()
     
     @IBAction func randomButtonPressed(_ sender: Any) {
-        let childView = self.childViewControllers[0] as! ContentViewController
-        childView.activityIndicator.isHidden = false
-        childView.activityIndicator.startAnimating()
-        randomButton.isUserInteractionEnabled = false
-        print("Interaction events now being ignored")
-        OperationQueue.main.addOperation {
-            ContentViewModel.shared.fetch()
-            childView.content?.reloadData()
-            childView.viewDidLoad()
-            childView.activityIndicator.stopAnimating()
-            self.randomButton.isUserInteractionEnabled = true
+        if Reachability.isConnectedToNetwork() {
+            let childView = self.childViewControllers[0] as! ContentViewController
+            childView.activityIndicator.isHidden = false
+            childView.activityIndicator.startAnimating()
+            randomButton.isUserInteractionEnabled = false
+            print("Interaction events now being ignored")
+            OperationQueue.main.addOperation {
+                ContentViewModel.shared.fetch()
+                childView.content?.reloadData()
+                childView.viewDidLoad()
+                childView.activityIndicator.stopAnimating()
+                self.randomButton.isUserInteractionEnabled = true
+            }
+        } else {
+            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+            connectionAlert.addAction(okay)
+            self.present(connectionAlert, animated: true, completion: nil)
         }
-
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
-        let shareURL = URL(string: HTMLParser.shared.shareURL)!
-        let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            shareViewController.popoverPresentationController?.sourceView = self.view
-            shareViewController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+        if Reachability.isConnectedToNetwork() {
+            let shareURL = URL(string: HTMLParser.shared.shareURL)!
+            let shareViewController = UIActivityViewController(activityItems: [shareURL as URL], applicationActivities: nil)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                shareViewController.popoverPresentationController?.sourceView = self.view
+                shareViewController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+            }
+            self.present(shareViewController, animated: true, completion: nil)
+        } else {
+            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+            connectionAlert.addAction(okay)
+            self.present(connectionAlert, animated: true, completion: nil)
         }
-        self.present(shareViewController, animated: true, completion: nil)
     }
     
     

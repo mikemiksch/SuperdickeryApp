@@ -29,16 +29,8 @@ class ContentViewController: UIViewController {
                 self.loadIn()
                 self.content?.reloadData()
                 self.activityIndicator.isHidden = true
-//                let parent = self.parent as! ViewController
-//                parent.randomButton.isUserInteractionEnabled = true
-//                print("No longer ignoring user interaction events")
             }
 
-        } else {
-            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-            connectionAlert.addAction(okay)
-            self.present(connectionAlert, animated: true, completion: nil)
         }
     }
     
@@ -58,17 +50,5 @@ class ContentViewController: UIViewController {
         self.content?.register(imageNib, forCellReuseIdentifier: ImageCell.identifier)
         self.content?.register(textNimb, forCellReuseIdentifier: TextCell.identifier)
     }
-    
-//    func checkConnectivity() -> Bool {
-//        if currentReachabilityStatus == .notReachable {
-//            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
-//            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            connectionAlert.addAction(okay)
-//            self.present(connectionAlert, animated: true, completion: nil)
-//            return false
-//        } else {
-//            return true
-//        }
-//    }
     
 }
