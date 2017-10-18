@@ -32,10 +32,7 @@ class ViewController: UIViewController {
                 self.randomButton.isUserInteractionEnabled = true
             }
         } else {
-            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-            connectionAlert.addAction(okay)
-            self.present(connectionAlert, animated: true, completion: nil)
+            presentConnectionWarning()
         }
     }
     
@@ -49,10 +46,7 @@ class ViewController: UIViewController {
             }
             self.present(shareViewController, animated: true, completion: nil)
         } else {
-            let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-            connectionAlert.addAction(okay)
-            self.present(connectionAlert, animated: true, completion: nil)
+            presentConnectionWarning()
         }
     }
     
@@ -68,6 +62,13 @@ class ViewController: UIViewController {
         shareButton.layer.cornerRadius = 10
         shareButton.layer.borderWidth = 3
         shareButton.layer.borderColor = UIColor(red: 0.0/255.0, green: 113.0/255.0, blue: 186.0/255.0, alpha: 1.0).cgColor
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if !Reachability.isConnectedToNetwork() {
+            presentConnectionWarning()
+        }
     }
 
     func animateSplash() {
@@ -87,7 +88,13 @@ class ViewController: UIViewController {
                 blankBackground.removeFromSuperview()
             })
         })
-        
+    }
+    
+    func presentConnectionWarning() {
+        let connectionAlert = UIAlertController(title: "No Internet Connection", message: "Please make sure your device is connected to the internet.", preferredStyle: .alert)
+        let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+        connectionAlert.addAction(okay)
+        self.present(connectionAlert, animated: true, completion: nil)
     }
 }
 
