@@ -15,31 +15,40 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshContent()
+        formatTable()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         activityIndicator.isHidden = true
-        if Reachability.isConnectedToNetwork() {
-            let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
-            activityIndicator.transform = transform
-            activityIndicator.isHidden = false
-            activityIndicator.startAnimating()
-            OperationQueue.main.addOperation {
-                self.loadIn()
-                self.content?.reloadData()
-                self.activityIndicator.isHidden = true
-            }
-
-        }
     }
     
-    func loadIn() {
+    func formatTable() {
         self.content?.estimatedRowHeight = 1000.0
         self.content?.rowHeight = UITableViewAutomaticDimension
         self.registerNibs()
         self.content?.dataSource = ContentViewModel.shared
         self.content?.separatorStyle = .none
+    }
+    
+    func refreshContent() {
+        if Reachability.isConnectedToNetwork() {
+            let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            activityIndicator.transform = transform
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+            DispatchQueue.main.async {
+                ContentViewModel.shared.fetch()
+                self.content?.reloadData()
+                self.content?.setContentOffset(.zero, animated: false)
+                self.activityIndicator.isHidden = true
+                let parent = self.parent as! ViewController
+                parent.randomButton.isUserInteractionEnabled = true
+                print("Random button reenabled")
+            }
+            
+        }
     }
     
     func registerNibs() {

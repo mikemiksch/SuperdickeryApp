@@ -23,13 +23,9 @@ class ViewController: UIViewController {
             childView.activityIndicator.isHidden = false
             childView.activityIndicator.startAnimating()
             randomButton.isUserInteractionEnabled = false
-            print("Interaction events now being ignored")
-            OperationQueue.main.addOperation {
-                ContentViewModel.shared.fetch()
-                childView.content?.reloadData()
-                childView.viewDidLoad()
-                childView.activityIndicator.stopAnimating()
-                self.randomButton.isUserInteractionEnabled = true
+            print("Random button disabled")
+            DispatchQueue.main.async {
+                childView.refreshContent()
             }
         } else {
             presentConnectionWarning()
