@@ -13,6 +13,8 @@ class ContentViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var connectionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         formatTable()
@@ -39,7 +41,7 @@ class ContentViewController: UIViewController {
         label.text = "Your Internet Connection is a Dick"
         label.center.y = self.view.center.y
         if Reachability.isConnectedToNetwork() {
-            print("hey!")
+            connectionLabel.isHidden = true
             let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             activityIndicator.transform = transform
             activityIndicator.isHidden = false
@@ -47,7 +49,6 @@ class ContentViewController: UIViewController {
             DispatchQueue.main.async {
                 ContentViewModel.shared.fetch()
                 self.content?.reloadData()
-//                self.content?.setContentOffset(.zero, animated: false)
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController
                 parent.randomButton.isUserInteractionEnabled = true
