@@ -44,11 +44,13 @@ class ContentViewController: UIViewController {
             connectionLabel.isHidden = true
             let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             activityIndicator.transform = transform
-            activityIndicator.isHidden = false
-            activityIndicator.startAnimating()
             DispatchQueue.main.async {
+//                self.activityIndicator.isHidden = false
+//                self.activityIndicator.startAnimating()
                 ContentViewModel.shared.fetch()
                 self.content?.reloadData()
+//                self.content?.layoutIfNeeded()
+                self.content?.contentOffset = .zero
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController
                 parent.randomButton.isUserInteractionEnabled = true
