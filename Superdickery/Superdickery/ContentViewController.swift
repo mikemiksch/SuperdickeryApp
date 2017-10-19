@@ -17,13 +17,18 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        formatTable()
-        refreshContent()
+        loadView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         activityIndicator.isHidden = true
+    }
+    
+    override func loadView() {
+        super.loadView()
+        formatTable()
+        refreshContent()
     }
     
     func formatTable() {
