@@ -18,8 +18,8 @@
 		834AD7FA1F4CE39E0041AF9A /* ContentVideoElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7F91F4CE39E0041AF9A /* ContentVideoElement.swift */; };
 		834AD7FC1F4CE3F70041AF9A /* ContentTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7FB1F4CE3F70041AF9A /* ContentTextElement.swift */; };
 		834AD7FF1F4CE49D0041AF9A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AD7FE1F4CE49D0041AF9A /* ContentViewModel.swift */; };
+		834CB9851F9FBFB700B0D9DC /* Reachability 11-33-06-432.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CB9841F9FBFB700B0D9DC /* Reachability 11-33-06-432.swift */; };
 		83641D741F953FE8002B9D7D /* Franklin Gothic Heavy Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83641D731F953FCC002B9D7D /* Franklin Gothic Heavy Regular.ttf */; };
-		8379A4B61F9681BC0092BCE7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8379A4B51F9681BC0092BCE7 /* Reachability.swift */; };
 		837BA75B1F4639100081E13A /* Thames-Serial-Heavy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837BA75A1F4639040081E13A /* Thames-Serial-Heavy-Regular.ttf */; };
 		838C8A2E1F3A59DF0097FCF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */; };
 		838C8A301F3A59DF0097FCF4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C8A2F1F3A59DF0097FCF4 /* ContentViewController.swift */; };
@@ -47,8 +47,9 @@
 		834AD7F91F4CE39E0041AF9A /* ContentVideoElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVideoElement.swift; sourceTree = "<group>"; };
 		834AD7FB1F4CE3F70041AF9A /* ContentTextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTextElement.swift; sourceTree = "<group>"; };
 		834AD7FE1F4CE49D0041AF9A /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		834CB9841F9FBFB700B0D9DC /* Reachability 11-33-06-432.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reachability 11-33-06-432.swift"; path = "../../../../../.Trash/Reachability 11-33-06-432.swift"; sourceTree = "<group>"; };
+		834CB9861F9FBFF100B0D9DC /* Franklin Gothic Heavy Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Franklin Gothic Heavy Regular.ttf"; path = "../../../../../.Trash/Franklin Gothic Heavy Regular (1)/Franklin Gothic Heavy Regular.ttf"; sourceTree = "<group>"; };
 		83641D731F953FCC002B9D7D /* Franklin Gothic Heavy Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Franklin Gothic Heavy Regular.ttf"; path = "../../../../../Downloads/Franklin Gothic Heavy Regular/Franklin Gothic Heavy Regular.ttf"; sourceTree = "<group>"; };
-		8379A4B51F9681BC0092BCE7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = /Users/MacDaddy/Desktop/Projects/SuperdickeryApp/Superdickery/Superdickery/Reachability.swift; sourceTree = "<absolute>"; };
 		837BA75A1F4639040081E13A /* Thames-Serial-Heavy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thames-Serial-Heavy-Regular.ttf"; sourceTree = "<group>"; };
 		838C8A2A1F3A59DF0097FCF4 /* Superdickery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superdickery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838C8A2D1F3A59DF0097FCF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +109,7 @@
 				834AD7EF1F4CDBEB0041AF9A /* HTMLParser.swift */,
 				834AD7FD1F4CE46C0041AF9A /* Content Elements */,
 				830844061F4E3DCA00403BD3 /* UIExtensions.swift */,
-				8379A4B51F9681BC0092BCE7 /* Reachability.swift */,
+				834CB9841F9FBFB700B0D9DC /* Reachability 11-33-06-432.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -140,6 +141,7 @@
 				837BA75A1F4639040081E13A /* Thames-Serial-Heavy-Regular.ttf */,
 				838C8A391F3A59DF0097FCF4 /* Info.plist */,
 				838C8A341F3A59DF0097FCF4 /* Assets.xcassets */,
+				834CB9861F9FBFF100B0D9DC /* Franklin Gothic Heavy Regular.ttf */,
 				83641D731F953FCC002B9D7D /* Franklin Gothic Heavy Regular.ttf */,
 			);
 			name = Support;
@@ -206,6 +208,7 @@
 				838C8A281F3A59DF0097FCF4 /* Resources */,
 				94F66E8345F980B0C7B50958 /* [CP] Embed Pods Frameworks */,
 				9766F2F33FECA0FE243BE6F8 /* [CP] Copy Pods Resources */,
+				834CB9811F9FBF0400B0D9DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -276,14 +279,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Superdickery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		834CB9811F9FBF0400B0D9DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c1009380029801ea54fc6a8acb278d6443f3f2e1 37efc1003fde5246cde5b3ce51c188b3d7302e5131c1a1976b941955dcd022e6";
 		};
 		94F66E8345F980B0C7B50958 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -291,9 +310,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Superdickery/Pods-Superdickery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -328,10 +352,10 @@
 				83C5CDC41F4E1BCC002DC217 /* TitleCell.swift in Sources */,
 				838C8A301F3A59DF0097FCF4 /* ContentViewController.swift in Sources */,
 				83D70DFE1F4E46F500728C5A /* ImageCell.swift in Sources */,
-				8379A4B61F9681BC0092BCE7 /* Reachability.swift in Sources */,
 				834AD7F61F4CE23F0041AF9A /* ContentTitleElement.swift in Sources */,
 				834AD7FA1F4CE39E0041AF9A /* ContentVideoElement.swift in Sources */,
 				834AD7F81F4CE2FE0041AF9A /* ContentImageElement.swift in Sources */,
+				834CB9851F9FBFB700B0D9DC /* Reachability 11-33-06-432.swift in Sources */,
 				838C8A2E1F3A59DF0097FCF4 /* AppDelegate.swift in Sources */,
 				834AD7FF1F4CE49D0041AF9A /* ContentViewModel.swift in Sources */,
 				830844071F4E3DCA00403BD3 /* UIExtensions.swift in Sources */,

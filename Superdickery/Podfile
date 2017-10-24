@@ -4,4 +4,5 @@ use_frameworks!
 target 'Superdickery' do
   pod 'SwiftSoup'
   pod 'Gifu'
+  pod 'Crashlytics'
 end
