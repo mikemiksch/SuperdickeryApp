@@ -17,19 +17,15 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadView()
+        formatTable()
+        refreshContent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         activityIndicator.isHidden = true
     }
-    
-    override func loadView() {
-        super.loadView()
-        formatTable()
-        refreshContent()
-    }
+
     
     func formatTable() {
         self.content?.estimatedRowHeight = 1000.0
@@ -40,21 +36,13 @@ class ContentViewController: UIViewController {
     }
     
     func refreshContent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.text = "Your Internet Connection is a Dick"
-        label.center.y = self.view.center.y
         if Reachability.isConnectedToNetwork() {
             connectionLabel.isHidden = true
             let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             activityIndicator.transform = transform
             DispatchQueue.main.async {
-//                self.activityIndicator.isHidden = false
-//                self.activityIndicator.startAnimating()
                 ContentViewModel.shared.fetch()
                 self.content?.reloadData()
-//                self.content?.layoutIfNeeded()
                 self.content?.contentOffset = .zero
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController

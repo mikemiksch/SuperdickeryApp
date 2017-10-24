@@ -25,8 +25,7 @@ class ViewController: UIViewController {
             randomButton.isUserInteractionEnabled = false
             print("Random button disabled")
             DispatchQueue.main.async {
-                childView.loadView()
-//                childView.refreshContent()
+                childView.refreshContent()
             }
         } else {
             presentConnectionWarning()
