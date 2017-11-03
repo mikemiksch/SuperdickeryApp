@@ -42,8 +42,9 @@ class ContentViewController: UIViewController {
             activityIndicator.transform = transform
             DispatchQueue.main.async {
                 ContentViewModel.shared.fetch()
+//                let offset = self.content?.contentOffset
                 self.content?.reloadData()
-                self.content?.contentOffset = .zero
+//                self.content?.setContentOffset(offset!, animated: false)
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController
                 parent.randomButton.isUserInteractionEnabled = true

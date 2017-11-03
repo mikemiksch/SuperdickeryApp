@@ -5,4 +5,5 @@ target 'Superdickery' do
   pod 'SwiftSoup'
   pod 'Gifu'
   pod 'Crashlytics'
+  pod 'SwiftyJSON', git: 'https://github.com/BaiduHiDeviOS/SwiftyJSON.git', branch: 'swift3'
 end
