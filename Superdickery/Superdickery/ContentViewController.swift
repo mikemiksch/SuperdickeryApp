@@ -25,6 +25,7 @@ class ContentViewController: UIViewController {
         super.viewDidAppear(true)
         activityIndicator.isHidden = true
     }
+
     
     func formatTable() {
         self.content?.estimatedRowHeight = 1000.0
@@ -35,20 +36,15 @@ class ContentViewController: UIViewController {
     }
     
     func refreshContent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.text = "Your Internet Connection is a Dick"
-        label.center.y = self.view.center.y
         if Reachability.isConnectedToNetwork() {
             connectionLabel.isHidden = true
             let transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             activityIndicator.transform = transform
-            activityIndicator.isHidden = false
-            activityIndicator.startAnimating()
             DispatchQueue.main.async {
                 ContentViewModel.shared.fetch()
+//                let offset = self.content?.contentOffset
                 self.content?.reloadData()
+//                self.content?.setContentOffset(offset!, animated: false)
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController
                 parent.randomButton.isUserInteractionEnabled = true

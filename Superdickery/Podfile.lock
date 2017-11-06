@@ -1,15 +1,34 @@
 PODS:
+  - Crashlytics (3.8.6):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.13)
   - Gifu (2.0.0)
   - SwiftSoup (1.3.2)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Crashlytics
   - Gifu
   - SwiftSoup
+  - SwiftyJSON (from `https://github.com/BaiduHiDeviOS/SwiftyJSON.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: swift3
+    :git: https://github.com/BaiduHiDeviOS/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: de5dc3b1b421805769590d331178551bbb0e5733
+    :git: https://github.com/BaiduHiDeviOS/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
   Gifu: 56a4d8f1092399159fa32662aa2232158b48d8ac
   SwiftSoup: 09165cc0d03c1ecdaf944716b7996ffeabae32f6
+  SwiftyJSON: 6118fb49d7519c4d31a0c1f3d5af936e9047b556
 
-PODFILE CHECKSUM: 809e28a12e951e769388ebbb74e0a560eb4467b8
+PODFILE CHECKSUM: 0b586bc0f449597396e6edcd9c2cf0ba1624428f
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
