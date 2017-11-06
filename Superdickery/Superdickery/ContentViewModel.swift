@@ -19,16 +19,18 @@ class ContentViewModel: NSObject {
     
     func fetch() {
         items.removeAll()
-        HTMLParser.shared.fetchPage()
-        items.append(ContentTitleElement(labelText: HTMLParser.shared.title))
-        for each in HTMLParser.shared.imageElements {
-            items.append(ContentImageElement(element: each))
-        }
-        for each in HTMLParser.shared.labelTexts {
-            items.append(ContentTextElement(labelText: each))
-        }
+        HTMLParser.shared.fetchPage(callback: { (success) in
+            if success {
+                self.items.append(ContentTitleElement(labelText: HTMLParser.shared.title))
+                for each in HTMLParser.shared.imageElements {
+                    self.items.append(ContentImageElement(element: each))
+                }
+                for each in HTMLParser.shared.labelTexts {
+                    self.items.append(ContentTextElement(labelText: each))
+                }
+            }
+        })
     }
-    
 }
 
 extension ContentViewModel : UITableViewDataSource {
