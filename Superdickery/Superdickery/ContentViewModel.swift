@@ -19,8 +19,7 @@ class ContentViewModel: NSObject {
     
     func fetch() {
         items.removeAll()
-        let html = HTMLParser.shared.fetchPage()
-        HTMLParser.shared.parseHTML(html: html)
+        HTMLParser.shared.fetchPage()
         items.append(ContentTitleElement(labelText: HTMLParser.shared.title))
         for each in HTMLParser.shared.imageElements {
             items.append(ContentImageElement(element: each))

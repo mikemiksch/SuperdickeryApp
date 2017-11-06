@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSoup
+import SwiftyJSON
 
 class HTMLParser {
     static let shared = HTMLParser()
@@ -18,6 +19,42 @@ class HTMLParser {
     var shareURL = String()
     
     func fetchPage() -> String {
+        imageElements.removeAll()
+        labelTexts.removeAll()
+        guard let callURL = URL(string: "https://www.superdickery.com/wp-json/wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1&categories=60") else { return "Error" }
+        URLSession.shared.dataTask(with: callURL) { (data, response, error) in
+            if let error = error {
+                print("Error retrieving data from API call: \(error.localizedDescription)")
+                return
+            }
+            guard response != nil else { return }
+            guard let data = data else { return }
+            
+            let json = JSON(data: data)
+            
+            self.shareURL = json[0]["link"].string!
+            self.title = json[0]["title"]["rendered"].string!
+            
+            let html = json[0]["content"]["rendered"].string!
+            let doc : Document = try! SwiftSoup.parse(html)
+            let images = try! doc.select(".aligncenter").array()
+            let pTags = try! doc.select("p").array()
+            for each in images {
+                self.imageElements.append(each)
+            }
+            for each in pTags {
+                let text = try! each.text()
+                if text != "" {
+                    self.labelTexts.append(text)
+                }
+            }
+            
+            print(self.imageElements)
+            print(self.labelTexts)
+        }.resume()
+        
+        
+        
         let baseURL = URL(string: "http://www.superdickery.com/random")!
         let data = NSData(contentsOf: baseURL)
         let request = URLRequest(url: baseURL)
