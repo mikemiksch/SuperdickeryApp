@@ -33,7 +33,7 @@ class HTMLParser {
             let json = JSON(data: data)
             
             self.shareURL = json[0]["link"].string!
-            self.title = json[0]["title"]["rendered"].string!
+            self.title = json[0]["title"]["rendered"].string!.stringByDecodingHTMLEntities
             
             let html = json[0]["content"]["rendered"].string!
             let doc : Document = try! SwiftSoup.parse(html)
