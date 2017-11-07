@@ -13,18 +13,6 @@ extension UIImage {
     
     typealias ImageCallback = (UIImage?)->()
     
-//    class func fetchImageWith(_ urlString : String, callback: @escaping ImageCallback) {
-//        OperationQueue().addOperation {
-//            guard let url = URL(string: urlString) else { callback(nil); return }
-//            if let data = try? Data(contentsOf: url) {
-//                let image = UIImage(data: data)
-//                OperationQueue.main.addOperation {
-//                    callback(image)
-//                    print("Called back image")
-//                }
-//            }
-//        }
-//    }
     
     func resizeByWidth(maxWidth: CGFloat) -> UIImage {
         let scaleFactor = maxWidth / self.size.width
@@ -37,16 +25,6 @@ extension UIImage {
         return resizedImage!
     }
     
-//    func resizeByHeight() -> UIImage {
-//        let scaleFactor = 700 / self.size.height
-//        let width = self.size.width * scaleFactor
-//        
-//        UIGraphicsBeginImageContext(CGSize(width: width, height: 700))
-//        self.draw(in: CGRect(x: 0, y: 0, width: width, height: 700))
-//        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return resizedImage!
-//    }
 }
 
 extension UIResponder {

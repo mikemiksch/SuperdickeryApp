@@ -48,9 +48,6 @@ class HTMLParser {
                     self.labelTexts.append(text)
                 }
             }
-            print(self.title)
-            print(self.imageElements)
-            print(self.labelTexts)
             callback(true)
         }.resume()
         

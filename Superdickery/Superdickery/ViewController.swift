@@ -23,7 +23,6 @@ class ViewController: UIViewController {
             childView.activityIndicator.isHidden = false
             childView.activityIndicator.startAnimating()
             randomButton.isUserInteractionEnabled = false
-            print("Random button disabled")
             DispatchQueue.main.async {
                 childView.refreshContent()
             }
