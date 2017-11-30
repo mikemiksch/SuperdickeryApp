@@ -43,6 +43,7 @@ class ContentViewController: UIViewController {
             DispatchQueue.main.async {
                 ContentViewModel.shared.fetch()
                 self.content?.reloadData()
+                self.content?.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
                 self.activityIndicator.isHidden = true
                 let parent = self.parent as! ViewController
                 parent.randomButton.isUserInteractionEnabled = true
